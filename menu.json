@@ -2,16 +2,16 @@
   {
     "name": "Methi Ladoo",
     "description": "That's how we got our name!!!",
-    "price": "INR 800/kg"
+    "price": "₹ 800/kg"
   },
   {
     "name": "Paushtik Ladoo",
     "description": "All the Proteins, less the Bitterness",
-    "price": "INR 800/kg"
+    "price": "₹ 900/kg"
   },
   {
     "name": "Dry-Fruit Ladoo",
     "description": "Your Healthy Alternative to a After Meal Sweeet and a Morning Quick-Bite",
-    "price": "INR 900/kg"
+    "price": "₹ 1000/kg"
   }
 ]
