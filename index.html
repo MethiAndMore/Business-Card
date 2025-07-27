@@ -3,38 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methi & More - Digital Business Card</title>
+    <title>Methi & More - Digital Business Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="card">
-        <header>
-            <!-- This now points to the image in your new repository -->
-            <img src="https://methiandmore.github.io/Business-Card/profile.jpg" alt="Profile Picture for Methi & More" class="profile-pic">
-            
-            <h1>Mrs. Gauri Ashwin Hate</h1>
-            <p>Methi & More</p>
-        </header>
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo">Methi & More</a>
+            <nav class="nav-menu">
+                <a href="#card-section" class="nav-link">My Card</a>
+                <a href="#product-section" class="nav-link">Products</a>
+                <a href="contact.vcf" class="nav-button" download>Add to Contacts</a>
+            </nav>
+        </div>
+    </header>
 
-        <section class="contact-info">
-            <h2></h2>
-            <p>Scan the QR code on my business card or click the button below to save my contact details directly to your phone.</p>
-            <a href="contact.vcf" class="button" download>Download V-Card</a>
-        </section>
-
-        <section class="menu">
-            <h2>Our Products</h2>
-            <div id="menu-container">
-                <!-- Menu items are loaded here by JavaScript -->
-                <p>Loading menu...</p>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>The Digital Business Card For Methi & More</h1>
+                <p>One scan is all it takes to save our contact details and see our latest products. Always up-to-date, never gets lost.</p>
             </div>
         </section>
 
-        <footer>
-            <p>Methi & More</p>
-        </footer>
-    </div>
+        <section id="card-section" class="content-section">
+            <div class="business-card-container">
+                
+                <!-- Profile Header -->
+                <div class="card-profile-header">
+                    <img src="https://methiandmore.github.io/Business-Card/profile.jpg" alt="Profile Picture for Methi & More" class="card-profile-pic">
+                    <div class="card-profile-text">
+                        <h2>Mrs. Gauri Ashwin Hate</h2>
+                        <p>Methi & More</p>
+                    </div>
+                </div>
+
+                <!-- QR Code Section -->
+                <div class="card-qr-section">
+                    <h3>Scan to Connect</h3>
+                    <img src="qr_code.png" alt="Scan QR Code to Add Contact" class="qr-image">
+                    <p class="qr-caption">Save my details directly to your phone.</p>
+                </div>
+                
+                <!-- Menu Section -->
+                <div id="product-section" class="card-menu-section">
+                    <h3>Our Products</h3>
+                    <div id="menu-container">
+                        <!-- Menu items will be loaded here by JavaScript -->
+                        <p>Loading menu...</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2025 Methi & More. All Rights Reserved.</p>
+    </footer>
 
     <script src="main.js"></script>
 
