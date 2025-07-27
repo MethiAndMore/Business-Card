@@ -1,104 +1,207 @@
+/* General Body Styles */
 body {
-    font-family: sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
     color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.card {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #5e42a6;
+}
+
+.nav-button {
+    background-color: #5e42a6;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #4a3287;
+}
+
+/* Hero Section with Gradient */
+.hero-section {
+    background: linear-gradient(90deg, #4b7bec, #a044ff);
+    color: #fff;
     text-align: center;
-    overflow: hidden;
+    padding: 6rem 1rem;
 }
 
-header {
-    background-color: #4a90e2;
-    color: white;
-    padding: 30px 20px;
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid white;
-    margin-bottom: 10px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.8em;
-}
-
-header p {
-    margin: 5px 0 0;
-    font-size: 1.1em;
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
     opacity: 0.9;
 }
 
-section {
-    padding: 25px;
+/* Main Content Section */
+.content-section {
+    padding: 4rem 1rem;
+}
+
+.business-card-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 2rem;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "qrcode menu";
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+/* Profile Header inside the card */
+.card-profile-header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
 }
 
-section h2 {
-    font-size: 1.4em;
-    color: #4a90e2;
+.card-profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-profile-text h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+.card-profile-text p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* QR Code Section inside the card */
+.card-qr-section {
+    grid-area: qrcode;
+    text-align: center;
+}
+
+.card-qr-section h3, .card-menu-section h3 {
     margin-top: 0;
+    font-size: 1.4rem;
+    color: #5e42a6;
 }
 
-.button {
-    display: inline-block;
-    background-color: #50e3c2;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: background-color 0.3s;
+.qr-image {
+    max-width: 220px;
+    width: 100%;
+    border-radius: 10px;
 }
 
-.button:hover {
-    background-color: #48cdae;
+.qr-caption {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Menu Section inside the card */
+.card-menu-section {
+    grid-area: menu;
 }
 
 .menu-item {
     text-align: left;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid #f0f0f0;
 }
-
 .menu-item:last-child {
     border-bottom: none;
     margin-bottom: 0;
-    padding-bottom: 0;
 }
-
 .menu-item h3 {
     margin: 0 0 5px 0;
     color: #333;
 }
-
 .menu-item p {
     margin: 0;
     color: #666;
 }
 
-footer {
-    padding: 15px;
-    font-size: 0.8em;
-    color: #999;
-    background-color: #fafafa;
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #e9ecef;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .business-card-container {
+        grid-template-areas:
+            "header"
+            "qrcode"
+            "menu";
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    .card-profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
 }
