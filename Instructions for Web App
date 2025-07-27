@@ -1,0 +1,90 @@
+QRCard - Digital Visiting Card Platform
+Overview
+QRCard is a full-stack web application for creating and sharing digital visiting cards with QR code functionality. The application allows users to create personalized business cards, generate QR codes for easy sharing, and track engagement through analytics. Built with a modern TypeScript stack, it provides a seamless experience across all devices.
+
+User Preferences
+Preferred communication style: Simple, everyday language.
+
+System Architecture
+The application follows a monorepo structure with a clear separation between frontend, backend, and shared code:
+
+Frontend: React-based SPA with TypeScript, built using Vite
+Backend: Node.js Express server with TypeScript
+Database: PostgreSQL with Drizzle ORM
+Shared: Common schemas and types shared between frontend and backend
+Styling: Tailwind CSS with shadcn/ui components
+Key Components
+Frontend Architecture
+The client application is built with:
+
+React 18 with TypeScript for the UI framework
+Wouter for lightweight client-side routing
+TanStack Query for server state management and data fetching
+React Hook Form with Zod validation for form handling
+shadcn/ui component library built on Radix UI primitives
+Tailwind CSS for styling with custom CSS variables for theming
+Backend Architecture
+The server follows RESTful API design:
+
+Express.js with TypeScript for the web framework
+Drizzle ORM for database operations and migrations
+Memory storage fallback for development/demo purposes
+QR code generation using the qrcode library
+Session-based request logging and error handling middleware
+Data Storage
+The application uses a dual storage approach:
+
+Primary: PostgreSQL database with Drizzle ORM
+Fallback: In-memory storage for development and demo scenarios
+Schema: Strongly typed with Zod validation and Drizzle schema definitions
+Database tables:
+
+cards: User business card information with templates and tracking data
+scans: Analytics data for QR code scans with metadata
+Authentication and Authorization
+Currently implements a simplified approach:
+
+No authentication system (suitable for demo/MVP)
+Public access to all card viewing endpoints
+Future-ready architecture for adding authentication layers
+Data Flow
+Card Creation: Users fill forms → validation → API call → database storage → QR generation
+Card Viewing: QR scan → route to card view → API fetch → display card → track scan
+Analytics: Scan tracking → database updates → dashboard analytics display
+Real-time Updates: Form changes → immediate preview → optimistic UI updates
+External Dependencies
+Database
+Neon Database (serverless PostgreSQL) for production
+Connection managed through DATABASE_URL environment variable
+Automatic connection pooling and scaling
+QR Code Generation
+qrcode library for generating QR codes
+Server-side generation with PNG output
+Downloadable QR codes for offline sharing
+UI Components
+Radix UI primitives for accessible, unstyled components
+Lucide React for consistent iconography
+React Icons for additional icon sets (LinkedIn, social media)
+Development Tools
+Vite for fast development and building
+TypeScript for type safety across the stack
+ESBuild for production server bundling
+Drizzle Kit for database migrations and management
+Deployment Strategy
+The application is designed for multiple deployment scenarios:
+
+Development
+Vite dev server for frontend with HMR
+tsx for running TypeScript server directly
+Memory storage fallback when database is not available
+Production Build
+Frontend: Vite builds static assets to dist/public
+Backend: ESBuild bundles server code to dist/index.js
+Database: Drizzle migrations run automatically
+Static Serving: Express serves frontend assets in production
+Environment Configuration
+NODE_ENV determines development vs production behavior
+DATABASE_URL for PostgreSQL connection
+Graceful fallback to memory storage for demos
+REPL_ID detection for Replit-specific features
+The architecture prioritizes simplicity and developer experience while maintaining scalability for future enhancements like user authentication, advanced analytics, and team collaboration features.
