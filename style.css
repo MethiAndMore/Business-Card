@@ -26,9 +26,9 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #333;
+    font-size: 1.2rem; /* A slightly more subtle size */
+    font-weight: 400;  /* This makes the font normal (not bold) */
+    color: #555;      /* A slightly softer black for the text */
     text-decoration: none;
 }
 
