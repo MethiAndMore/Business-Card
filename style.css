@@ -1,0 +1,144 @@
+/* General Setup */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* A clean, modern font */
+    background-color: #F8F9FA; /* Light grey background */
+    color: #343a40; /* Dark grey text for readability */
+}
+
+.card-container {
+    max-width: 600px;
+    margin: 2rem auto; /* Center the card with space on top/bottom */
+    padding: 1rem 2rem 2rem 2rem;
+    background-color: #ffffff; /* White card */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Soft shadow */
+    text-align: center;
+}
+
+/* Header with Logo and Title */
+.profile-header .profile-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-header h1 {
+    font-family: 'Lora', serif; /* An elegant font for the main title */
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.profile-header .tagline {
+    font-size: 1.1rem;
+    color: #6c757d; /* Softer color for the tagline */
+    margin: 0.25rem 0 0 0;
+}
+
+/* Owner Info Section */
+.info-section {
+    margin: 2rem 0;
+}
+.info-section h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.info-section p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin: 0.25rem 0 0 0;
+}
+
+/* QR Code & WhatsApp Section */
+.connect-section h3 {
+    font-size: 1.2rem;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+.connect-section .qr-image {
+    max-width: 280px;
+    border-radius: 10px;
+}
+.connect-section .caption {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+.connect-section .whatsapp-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.3s ease;
+}
+.whatsapp-button:hover {
+    background-color: #1DA851;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Separator Line */
+.separator {
+    border: none;
+    height: 1px;
+    background-color: #dee2e6;
+    margin: 2.5rem 0;
+}
+
+/* Products Section */
+.products-section h3 {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#menu-container {
+    text-align: left;
+}
+.menu-item {
+    margin-bottom: 1.5rem;
+}
+.menu-item h3 { /* Product Name */
+    font-size: 1.6rem;
+    margin: 0;
+}
+.menu-item .description { /* Product Description */
+    font-size: 1.1rem;
+    color: #495057;
+    margin: 0.25rem 0 0.5rem 0;
+}
+.menu-item .price { /* Product Price */
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-fab {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.whatsapp-fab:hover {
+    transform: scale(1.1);
+}
+
+/* Your menu.js needs one tiny change to add CSS classes */
+/* So I'm putting the styles for it here */
