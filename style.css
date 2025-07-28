@@ -26,12 +26,11 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.2rem; /* A slightly more subtle size */
-    font-weight: 400;  /* This makes the font normal (not bold) */
-    color: #555;      /* A slightly softer black for the text */
+    font-size: 1.5rem; /* Restored original size */
+    font-weight: 650;  /* This makes the font BOLD */
+    color: #333;      /* Restored original color */
     text-decoration: none;
 }
-
 .nav-menu {
     display: flex;
     align-items: center;
