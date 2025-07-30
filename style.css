@@ -1,247 +1,137 @@
-/* General Body Styles */
+/* General Body and Links */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background-color: #f8f9fa;
-    color: #333;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-}
-
-/* Navbar Styles */
-.navbar {
-    background-color: #ffffff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.nav-logo {
-    font-size: 1.5rem; /* Restored original size */
-    font-weight: 650;  /* This makes the font BOLD */
-    color: #333;      /* Restored original color */
-    text-decoration: none;
-}
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #5e42a6;
-}
-
-.nav-button {
-    background-color: #5e42a6;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.nav-button:hover {
-    background-color: #4a3287;
-}
-
-/* Hero Section with Gradient */
-.hero-section {
-    background: linear-gradient(90deg, #4b7bec, #a044ff);
-    color: #fff;
-    text-align: center;
-    padding: 4rem 1rem;
-}
-
-.hero-profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    object-fit: cover;
-}
-
-.hero-content h1 {
-    font-size: 2.2rem;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0.5rem auto 0 auto;
-    opacity: 0.9;
-}
-
-/* Main Content Section */
-.content-section {
-    padding: 4rem 1rem;
-}
-
-.business-card-container {
-    max-width: 900px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    display: grid;
-    /* On mobile, it's a single column by default */
-    grid-template-areas:
-        "header"
-        "qrcode"
-        "menu";
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-/* On larger screens (desktop), switch to two columns */
-@media (min-width: 768px) {
-    .business-card-container {
-        padding: 2rem;
-        grid-template-areas:
-            "header header"
-            "qrcode menu";
-        grid-template-columns: 1fr 1.5fr;
-    }
-}
-
-
-/* Profile Header inside the card */
-.card-profile-header {
-    grid-area: header;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1.5rem;
-}
-
-.card-profile-text h2 {
-    font-size: 1.8rem;
     margin: 0;
-}
-.card-profile-text p {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #666;
-}
-
-/* QR Code Section inside the card */
-.card-qr-section {
-    grid-area: qrcode;
-    text-align: center;
-}
-
-.card-qr-section h3, .card-menu-section h3 {
-    margin-top: 0;
-    font-size: 1.4rem;
-    color: #5e42a6;
-}
-
-.qr-image {
-    max-width: 220px;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.qr-caption {
-    font-size: 0.9em;
-    color: #666;
-}
-
-/* Menu Section inside the card */
-.card-menu-section {
-    grid-area: menu;
-}
-
-.menu-item {
-    text-align: left;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0;
-}
-.menu-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-.menu-item h3 {
-    font-size: 1.4rem;
-    margin: 0 0 5px 0;
+    padding: 0;
+    background: #f4f4f4;
     color: #333;
 }
-.menu-item .description {
-    color: #666;
-    margin: 0 0 0.5rem 0;
-}
-.menu-item .price {
-    font-weight: 600;
-}
 
-
-/* --- NEW WHATSAPP BUTTON STYLES --- */
-.whatsapp-order-button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.7rem 1.2rem;
-    background-color: #25D366;
-    color: white;
+a {
+    color: #333;
     text-decoration: none;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: all 0.2s ease;
 }
-.whatsapp-order-button:hover {
-    background-color: #1DA851;
-    transform: translateY(-2px);
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
-.whatsapp-fab {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25D366;
-    border-radius: 50px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
+
+header .logo img {
+    width: 80px;
+    height: 80px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Flashcard Styles */
+.flashcard-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-.whatsapp-fab:hover {
-    transform: scale(1.1);
+
+.flashcard {
+    perspective: 1000px;
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-front {
+    background: #fff;
+}
+
+.card-back {
+    background: #f9f9f9;
+    transform: rotateY(180deg);
+}
+
+.flashcard.flipped .card-front {
+    transform: rotateY(-180deg);
+}
+
+.flashcard.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+.button {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Products Page */
+.product-listing {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Contact Page */
+#contact-page {
+    text-align: center;
+}
+
+.add-to-contacts-mobile {
+    display: none;
 }
 
 /* Footer */
-.site-footer {
+footer {
     text-align: center;
-    padding: 2rem 1rem;
-    background-color: #e9ecef;
-    color: #6c757d;
-    font-size: 0.9rem;
+    margin-top: 20px;
+    padding: 20px;
+    background: #333;
+    color: #fff;
 }
 
-/* Hides the desktop nav menu on small screens */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none;
+    .add-to-contacts-mobile {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .flashcard {
+        width: 100%;
     }
 }
