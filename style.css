@@ -1,7 +1,14 @@
 :root {
-    --primary-color: #4A90E2;    /* Change this line for the blue color */
-    --secondary-color: #7B4FE8;  /* Change this line for the purple color */
-    --text-color: #FFFFFF;
+    /* Gradient Colors (From QRCard example) */
+    --primary-color: #4A90E2;
+    --secondary-color: #7B4FE8;
+
+    /* ---- NEW DUAL-TONE TEXT COLORS ---- */
+    --text-primary: #EAEAEA;      /* The main, bright "white" for headings */
+    --text-secondary: #A0A0A0;    /* The muted, secondary gray for descriptions */
+    /* ------------------------------------- */
+
+    /* Background & Font Settings */
     --background-color: #121212;
     --surface-color: #1E1E1E;
     --heading-font: 'Poppins', sans-serif;
@@ -21,7 +28,7 @@ html {
 body {
     font-family: var(--body-font);
     background-color: var(--background-color);
-    color: #EAEAEA;
+    color: var(--text-secondary); /* Default text color is now the muted shade */
     line-height: 1.6;
 }
 
@@ -54,7 +61,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-primary); /* Use primary text color */
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -62,8 +69,8 @@ body {
 .logo {
     height: 40px;
     width: 40px;
-    border-radius: 50%; /* Makes the profile picture circular */
-    object-fit: cover;   /* Ensures the image covers the area well */
+    border-radius: 50%;
+    object-fit: cover;
     margin-right: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
 }
@@ -78,7 +85,7 @@ body {
 }
 
 .main-nav a {
-    color: var(--text-color);
+    color: var(--text-primary); /* Use primary text color */
     text-decoration: none;
     font-weight: 400;
     transition: color 0.3s ease;
@@ -96,23 +103,23 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-color);
-    padding: 120px 20px 60px; /* More padding */
+    padding: 120px 20px 60px;
 }
 
 .hero h1 {
     font-family: var(--heading-font);
-    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
     max-width: 800px;
+    color: #FFFFFF; /* Hero title is pure white for max impact */
 }
 
 .hero .subtitle {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 300;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9); /* Subtitle is slightly transparent white */
 }
 
 .cta-button, .cta-button-secondary {
@@ -125,14 +132,14 @@ body {
 }
 
 .cta-button {
-    background-color: var(--text-color);
+    background-color: #FFFFFF;
     color: var(--secondary-color);
 }
 
 .cta-button-secondary {
     background-color: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
 }
 
 .cta-button:hover, .cta-button-secondary:hover {
@@ -154,11 +161,12 @@ h2 {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 600;
     margin-bottom: 1rem;
+    color: var(--text-primary); /* Use primary text color */
 }
 
 .section-description {
     font-size: 1.1rem;
-    color: #A0A0A0;
+    color: var(--text-secondary); /* Use secondary text color */
     margin-bottom: 3rem;
     max-width: 600px;
     margin-left: auto;
@@ -207,12 +215,20 @@ h2 {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card-front h3 { font-size: 1.5rem; color: #FFFFFF; }
-.card-front p { font-size: 1rem; color: #A0A0A0; margin-top: 5px; }
+.card-front h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary); /* Use primary text color */
+}
+
+.card-front p {
+    font-size: 1rem;
+    color: var(--text-secondary); /* Use secondary text color */
+    margin-top: 5px;
+}
 
 .card-back {
     background: linear-gradient(135deg, #5c9ce2, #8c6ee8);
-    color: white;
+    color: #FFFFFF;
     transform: rotateY(180deg);
 }
 .card-back h4 { font-size: 1.2rem; margin-bottom: 10px; }
@@ -222,7 +238,7 @@ h2 {
 .contact-info { margin: 2rem 0; }
 .contact-info p { margin-bottom: 1rem; }
 .contact-info a {
-    color: var(--text-color);
+    color: var(--text-primary); /* Use primary text color */
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     text-decoration: none;
     font-weight: 300;
@@ -233,64 +249,25 @@ h2 {
 .main-footer-bottom {
     text-align: center;
     padding: 2rem 0;
-    color: #A0A0A0;
+    color: var(--text-secondary); /* Use secondary text color */
     font-size: 0.9rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Mobile Navigation */
-.mobile-nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-    padding: 10px;
-}
-
-.hamburger {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: var(--text-color);
-    position: relative;
-    transition: background 0.3s ease-in-out;
-}
-
-.hamburger::before, .hamburger::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: var(--text-color);
-    left: 0;
-    transition: transform 0.3s ease-in-out;
-}
-
+.mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1001; padding: 10px; }
+.hamburger { display: block; width: 25px; height: 2px; background: var(--text-primary); position: relative; transition: background 0.3s ease-in-out; }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 2px; background: var(--text-primary); left: 0; transition: transform 0.3s ease-in-out; }
 .hamburger::before { top: -8px; }
 .hamburger::after { bottom: -8px; }
 
 @media (max-width: 768px) {
-    .main-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: var(--surface-color);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.5s ease-in-out;
-    }
-
+    .main-nav { position: fixed; top: 0; right: -100%; width: 70%; height: 100vh; background: var(--surface-color); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: right 0.5s ease-in-out; }
     .main-nav.active { right: 0; }
     .main-nav ul { flex-direction: column; text-align: center; }
     .main-nav li { margin: 20px 0; }
     .main-nav a { font-size: 1.5rem; }
     .mobile-nav-toggle { display: block; }
-    
     .mobile-nav-toggle.active .hamburger { background: transparent; }
     .mobile-nav-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); }
     .mobile-nav-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
