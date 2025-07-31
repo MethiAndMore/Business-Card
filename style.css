@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #4A90E2;
-    --secondary-color: #7B4FE8;
+    --primary-color: #4A90E2;    /* Change this line for the blue color */
+    --secondary-color: #7B4FE8;  /* Change this line for the purple color */
     --text-color: #FFFFFF;
     --background-color: #121212;
     --surface-color: #1E1E1E;
