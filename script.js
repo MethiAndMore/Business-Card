@@ -16,20 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         mainNav.classList.toggle('active');
     });
 
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Hide mobile nav on click
+    // Close mobile nav when a link is clicked
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
             if (mainNav.classList.contains('active')) {
                 mobileNavToggle.classList.remove('active');
                 mainNav.classList.remove('active');
             }
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
         });
     });
 
