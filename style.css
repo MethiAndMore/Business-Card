@@ -1,137 +1,254 @@
-/* General Body and Links */
+/* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns card to the top */
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-a {
-    color: #333;
-    text-decoration: none;
+/* Main Card Layout */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 550px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-/* Header and Navigation */
 header {
-    background: #fff;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
+    padding: 24px;
+    border-bottom: 1px solid #e9ecef;
     text-align: center;
 }
 
-header .logo img {
-    width: 80px;
-    height: 80px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-nav ul {
-    padding: 0;
-    list-style: none;
+.logo {
+    width: 60px;
+    height: 60px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.brand h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #343a40;
+}
+
+.brand .subtitle {
+    margin: 4px 0 0;
+    color: #6c757d;
+    font-weight: 300;
+}
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Allows nav to wrap on small screens */
+}
+
+.nav-link {
+    color: #495057;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+.nav-link.active {
+    background-color: #ff6f61;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 /* Main Content */
 main {
-    padding: 20px;
+    padding: 24px;
+}
+
+.content-section h2 {
+    color: #343a40;
+    margin-bottom: 24px;
+    font-size: 1.5em;
 }
 
 /* Flashcard Styles */
 .flashcard-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .flashcard {
+    background-color: transparent;
+    height: 180px;
     perspective: 1000px;
-    width: 300px;
-    height: 200px;
-    cursor: pointer;
 }
 
-.card-front, .card-back {
+.card-inner {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
     transition: transform 0.6s;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform-style: preserve-3d;
 }
 
-.card-front {
-    background: #fff;
-}
-
-.card-back {
-    background: #f9f9f9;
+.flashcard.flipped .card-inner {
     transform: rotateY(180deg);
 }
 
-.flashcard.flipped .card-front {
-    transform: rotateY(-180deg);
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
 }
 
-.flashcard.flipped .card-back {
-    transform: rotateY(0deg);
+.card-front {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
 }
 
+.card-front h3 { margin: 0; font-size: 1.3em; color: #ff6f61; }
+.card-front p { margin: 5px 0 0; color: #6c757d; }
+
+.card-back {
+    background: linear-gradient(135deg, #ff6f61, #d9534f);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back h4 { margin: 0 0 10px 0; }
+.card-back p { margin: 0; font-size: 0.9em; opacity: 0.9; }
+
+.details-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #d9534f;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+.details-button:hover {
+    background-color: #fff;
+}
+
+/* Product & Contact Page Styles */
+.product-item, .contact-details {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+.product-item h3 { margin-top: 0; color: #343a40; }
+.contact-details p, .product-item p { margin: 10px 0; display: flex; align-items: center; line-height: 1.6; }
+.contact-details a { color: #007bff; text-decoration: none; font-weight: 500; }
+.contact-details a:hover { text-decoration: underline; }
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+/* Button (Add to Contacts) */
 .button {
-    display: inline-block;
-    background: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s;
     margin-top: 10px;
 }
-
-/* Products Page */
-.product-listing {
-    background: #fff;
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-/* Contact Page */
-#contact-page {
-    text-align: center;
-}
-
-.add-to-contacts-mobile {
-    display: none;
-}
+.button:hover { background-color: #218838; }
 
 /* Footer */
-footer {
+footer.card-footer {
     text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background: #333;
-    color: #fff;
+    padding: 15px;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 0.9em;
+    border-top: 1px solid #e9ecef;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .add-to-contacts-mobile {
-        display: block;
-        margin-top: 20px;
-    }
-
-    .flashcard {
-        width: 100%;
+/* Mobile Responsiveness */
+@media (min-width: 550px) {
+    .flashcard-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media (max-width: 480px) {
+    body { padding: 10px; }
+    .card { margin-top: 10px; margin-bottom: 10px; }
+    header, main { padding: 16px; }
+    .brand h1 { font-size: 1.5em; }
+    .nav-link { padding: 6px 12px; font-size: 0.9em; }
+    .flashcard-container { grid-template-columns: 1fr; }
+}```
+
+---
+
+### **5. Updated `script.js` File**
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    // Add flip class on click for each flashcard
+    const flashcards = document.querySelectorAll('.flashcard');
+    flashcards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Prevent flip if the 'View Details' button was clicked
+            if (e.target.classList.contains('details-button')) {
+                return;
+            }
+            card.classList.toggle('flipped');
+        });
+    });
+});
