@@ -3,79 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methi & More - Digital Business Card</title>
+    <title>Methi & More | Digital Business Card</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="https://methiandmore.github.io/Business-Card/logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card">
-        <header>
-            <div class="logo-container">
-                <img src="https://methiandmore.github.io/Business-Card/logo.png" alt="Logo" class="logo">
-                <div class="brand">
-                    <h1>Methi & More</h1>
-                    <p class="subtitle">Authentic Indian Homemade Snacks</p>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Methi & More Logo" class="logo">
+                <span>Methi & More</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Authentic Homemade Indian Snacks</h1>
+            <p class="subtitle">Deliciously crafted, from our kitchen to your home.</p>
+            <a href="#products" class="cta-button">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="content-section">
+        <div class="container">
+            <h2>Everything You Need for a Tasty Treat</h2>
+            <p class="section-description">Professionally designed recipes for modern taste without the complexity.</p>
+            
+            <div class="flashcard-grid">
+                <!-- Methi Ladoo -->
+                <div class="flashcard">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Methi Ladoo</h3>
+                            <p>Our Flagbearer</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Ingredients</h4>
+                            <p>Fenugreek, Almonds, Cashews, Walnuts, Papaya Seeds, Garden Cress Seeds, Organic Jaggery & Ghee.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paushtik Ladoo -->
+                <div class="flashcard">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Paushtik Ladoo</h3>
+                            <p>More Proteins, Less Bitterness</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Ingredients</h4>
+                            <p>Makhana, Almonds, Cashews, Walnuts, Kharik, Pumpkin Seeds, Khajoor, Organic Jaggery & Ghee.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dry Fruit Ladoo -->
+                <div class="flashcard">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Dry Fruit Ladoo</h3>
+                            <p>Our Bestseller</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Ingredients</h4>
+                            <p>Khajoor, Almonds, Cashews, Walnuts, Pumpkin & Watermelon Seeds, Sunflower Seeds, Aliv, Kharik & Ghee.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <nav>
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-        </header>
+        </div>
+    </section>
 
-        <main>
-            <section class="content-section">
-                <h2>Our Products</h2>
-                <div class="flashcard-container">
-                    <!-- Methi Ladoo -->
-                    <div class="flashcard">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>Methi Ladoo</h3>
-                                <p>Our Flagbearer</p>
-                            </div>
-                            <div class="card-back">
-                                <h4>Methi Ladoo</h4>
-                                <p>That is where our name origins from.</p>
-                                <a href="products.html" class="details-button">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="content-section-dark">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p><a href="mailto:methiandmore@gmail.com">methiandmore@gmail.com</a></p>
+                <p><a href="tel:+918898573121">+91 8898 573121</a></p>
+            </div>
+            <a href="contact.vcf" class="cta-button-secondary">Add to Contacts</a>
+        </div>
+    </section>
 
-                    <!-- Paushtik Ladoo -->
-                    <div class="flashcard">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>Paushtik Ladoo</h3>
-                                <p>More Proteins, Less Bitterness</p>
-                            </div>
-                            <div class="card-back">
-                                <h4>Paushtik Ladoo</h4>
-                                <p>More Proteins, Less Bitterness</p>
-                                <a href="products.html" class="details-button">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Footer -->
+    <footer class="main-footer-bottom">
+        <p>© 2025 Methi & More. All Rights Reserved.</p>
+    </footer>
 
-                    <!-- Dry Fruit Ladoo -->
-                    <div class="flashcard">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>Dry Fruit Ladoo</h3>
-                                <p>Our Bestseller</p>
-                            </div>
-                            <div class="card-back">
-                                <h4>Dry Fruit Ladoo</h4>
-                                <p>A Quick Morning Bite and a Post Dinner Mandatory Sweet.</p>
-                                <a href="products.html" class="details-button">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
