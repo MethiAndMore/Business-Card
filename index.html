@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>From Gauri's Kitchen | Digital Business Card</title>
-    <link rel="stylesheet" href="style.css?v=1.3">
+    <link rel="stylesheet" href="style.css?v=1.4">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -33,13 +33,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Authentic Homemade Indian Snacks</h1>
-            <p class="subtitle">Deliciously crafted, from our kitchen to your home.</p>
+            <img src="profile.jpg" alt="From Gauri's Kitchen Logo" class="hero-logo">
+            <h1 class="hero-brand-name">Methi & More</h1>
+            <p class="subtitle">Shuddha, Satvik and Paushtik</p>
             <a href="#products" class="cta-button">Explore Our Products</a>
         </div>
     </section>
-
-    <!-- The rest of your index.html content remains the same... -->
 
     <!-- Products Section -->
     <section id="products" class="content-section">
@@ -48,6 +47,7 @@
             <p class="section-description">Click on a card to see more details and place an order.</p>
 
             <div class="flashcard-grid">
+                <!-- Product Cards remain here -->
                 <!-- Methi Ladoo -->
                 <div class="flashcard" data-product-name="Methi Ladoo">
                     <div class="card-inner">
@@ -79,7 +79,7 @@
                             <p>More Proteins, Less Bitterness</p>
                         </div>
                         <div class="card-back">
-                            <h4>Paushtik Ladoo</h4>
+                             <h4>Paushtik Ladoo</h4>
                             <p class="product-desc">Packed with proteins and wholesome goodness, a delicious treat with reduced bitterness.</p>
                             <a href="products.html" class="details-button">View Details</a>
                             <div class="order-section">
@@ -124,11 +124,24 @@
     <section id="contact" class="content-section-dark">
         <div class="container">
             <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <p><a href="mailto:methiandmore@gmail.com">methiandmore@gmail.com</a></p>
-                <p><a href="tel:+918898573121">+91 8898 573121</a></p>
+            <div class="contact-card-container">
+                <div class="flashcard">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Gauri Ashwin Hate</h3>
+                            <p>Co-Founder & CEO</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Contact Details</h4>
+                            <div class="contact-info-back">
+                                <p><a href="mailto:methiandmore@gmail.com">methiandmore@gmail.com</a></p>
+                                <p><a href="tel:+918898573121">+91 8898 573121</a></p>
+                            </div>
+                            <a href="contact.vcf" class="cta-button-gradient">Add to Contacts</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="contact.vcf" class="cta-button-secondary">Add to Contacts</a>
         </div>
     </section>
 
