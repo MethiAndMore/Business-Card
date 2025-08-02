@@ -1,48 +1,28 @@
 :root {
-    /* Gradient Colors (From QRCard example) */
     --primary-color: #4A90E2;
     --secondary-color: #7B4FE8;
-
-    /* ---- NEW DUAL-TONE TEXT COLORS ---- */
-    --text-primary: #EAEAEA;      /* The main, bright "white" for headings */
-    --text-secondary: #A0A0A0;    /* The muted, secondary gray for descriptions */
-    /* ------------------------------------- */
-
-    /* Background & Font Settings */
+    --text-primary: #EAEAEA;
+    --text-secondary: #A0A0A0;
     --background-color: #121212;
     --surface-color: #1E1E1E;
     --heading-font: 'Poppins', sans-serif;
     --body-font: 'Poppins', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
     font-family: var(--body-font);
     background-color: var(--background-color);
-    color: var(--text-secondary); /* Default text color is now the muted shade */
+    color: var(--text-secondary);
     line-height: 1.6;
 }
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
 /* Header */
 .main-header {
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -50,50 +30,13 @@ body {
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-primary); /* Use primary text color */
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.logo {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.main-nav li {
-    margin-left: 25px;
-}
-
-.main-nav a {
-    color: var(--text-primary); /* Use primary text color */
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: var(--primary-color);
-}
+.main-header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo-link { display: flex; align-items: center; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 1.2rem; }
+.logo { height: 40px; width: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px; border: 2px solid rgba(255, 255, 255, 0.5); }
+.main-nav ul { list-style: none; display: flex; }
+.main-nav li { margin-left: 25px; }
+.main-nav a { color: var(--text-primary); text-decoration: none; font-weight: 400; transition: color 0.3s ease; }
+.main-nav a:hover { color: var(--primary-color); }
 
 /* Hero Section */
 .hero {
@@ -105,23 +48,10 @@ body {
     text-align: center;
     padding: 120px 20px 60px;
 }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #FFFFFF; margin-bottom: 1rem; }
+.hero .subtitle { font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; }
 
-.hero h1 {
-    font-family: var(--heading-font);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    max-width: 800px;
-    color: #FFFFFF; /* Hero title is pure white for max impact */
-}
-
-.hero .subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    font-weight: 300;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9); /* Subtitle is slightly transparent white */
-}
-
+/* Buttons */
 .cta-button, .cta-button-secondary {
     display: inline-block;
     padding: 12px 30px;
@@ -129,77 +59,24 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.cta-button {
-    background-color: #FFFFFF;
-    color: var(--secondary-color);
-}
-
-.cta-button-secondary {
-    background-color: transparent;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-}
-
-.cta-button:hover, .cta-button-secondary:hover {
-    transform: translateY(-3px);
-}
-
-/* Content Sections */
-.content-section, .content-section-dark {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.content-section-dark {
-    background-color: var(--surface-color);
-}
-
-h2 {
-    font-family: var(--heading-font);
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-primary); /* Use primary text color */
-}
-
-.section-description {
-    font-size: 1.1rem;
-    color: var(--text-secondary); /* Use secondary text color */
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Flashcards */
-.flashcard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 2rem;
-}
-
-.flashcard {
-    background-color: transparent;
-    height: 250px;
-    perspective: 1000px;
     cursor: pointer;
 }
+.cta-button { background-color: #FFFFFF; color: var(--secondary-color); border: none; }
+.cta-button-secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
+.cta-button:hover, .cta-button-secondary:hover { transform: translateY(-3px); }
 
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.7s;
-    transform-style: preserve-3d;
-}
+/* Content Sections */
+.content-section, .content-section-dark { padding: 80px 20px; text-align: center; }
+.content-section-dark { background-color: var(--surface-color); }
+.page-main-content { padding-top: 80px; } /* For non-home pages */
+h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+.section-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-.flashcard.flipped .card-inner {
-    transform: rotateY(180deg);
-}
-
+/* Flashcards */
+.flashcard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.flashcard { background-color: transparent; height: 320px; perspective: 1000px; cursor: pointer; }
+.card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.7s; transform-style: preserve-3d; }
+.flashcard.flipped .card-inner { transform: rotateY(180deg); }
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -214,50 +91,37 @@ h2 {
     background-color: var(--surface-color);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+.card-front h3 { font-size: 1.8rem; color: var(--text-primary); }
+.card-front p { font-size: 1.1rem; color: var(--text-secondary); margin-top: 5px; }
+.card-back { background: linear-gradient(135deg, #5c9ce2, #8c6ee8); color: #FFFFFF; transform: rotateY(180deg); }
+.card-back h4 { font-size: 1.5rem; margin-bottom: 10px; }
+.card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; }
+.details-button { color: #fff; text-decoration: underline; font-size: 0.9rem; margin-bottom: 20px; }
 
-.card-front h3 {
-    font-size: 1.5rem;
-    color: var(--text-primary); /* Use primary text color */
-}
+/* Order Section on Flashcard */
+.order-section { text-align: center; margin-top: auto; }
+.quantity-control { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
+.quantity-control button { background: rgba(255,255,255,0.2); border: 1px solid #fff; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
+.quantity-control .quantity { margin: 0 15px; font-size: 1.2rem; font-weight: bold; }
+.whatsapp-order-button { background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
+.whatsapp-order-button:hover { background-color: #1EBE57; }
 
-.card-front p {
-    font-size: 1rem;
-    color: var(--text-secondary); /* Use secondary text color */
-    margin-top: 5px;
-}
+/* Products Page */
+.product-list { max-width: 800px; margin: 2rem auto; text-align: left; }
+.product-item { background: var(--surface-color); padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary-color); }
+.product-item h3 { color: var(--text-primary); margin-bottom: 10px; }
 
-.card-back {
-    background: linear-gradient(135deg, #5c9ce2, #8c6ee8);
-    color: #FFFFFF;
-    transform: rotateY(180deg);
-}
-.card-back h4 { font-size: 1.2rem; margin-bottom: 10px; }
-.card-back p { font-size: 0.9rem; line-height: 1.5; }
-
-/* Contact Section */
-.contact-info { margin: 2rem 0; }
-.contact-info p { margin-bottom: 1rem; }
-.contact-info a {
-    color: var(--text-primary); /* Use primary text color */
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    text-decoration: none;
-    font-weight: 300;
-}
-.contact-info a:hover { text-decoration: underline; }
+/* Contact Page */
+.vcard-info { background: var(--surface-color); padding: 20px; border-radius: 8px; margin: 2rem 0; }
+.vcard-info pre { white-space: pre-wrap; word-wrap: break-word; text-align: left; color: var(--text-primary); }
 
 /* Footer */
-.main-footer-bottom {
-    text-align: center;
-    padding: 2rem 0;
-    color: var(--text-secondary); /* Use secondary text color */
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+.main-footer-bottom { text-align: center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
 /* Mobile Navigation */
-.mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1001; padding: 10px; }
-.hamburger { display: block; width: 25px; height: 2px; background: var(--text-primary); position: relative; transition: background 0.3s ease-in-out; }
-.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 2px; background: var(--text-primary); left: 0; transition: transform 0.3s ease-in-out; }
+.mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1001; }
+.hamburger { display: block; width: 25px; height: 2px; background: var(--text-primary); position: relative; transition: background 0.3s 0s; }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 2px; background: var(--text-primary); left: 0; transition: transform 0.3s; }
 .hamburger::before { top: -8px; }
 .hamburger::after { bottom: -8px; }
 
