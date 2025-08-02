@@ -5,47 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Methi & More</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="https://methiandmore.github.io/Business-Card/logo.png">
+    <link rel="icon" type="image/png" href="profile.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card">
-        <header>
-            <div class="logo-container">
-                <img src="https://methiandmore.github.io/Business-Card/logo.png" alt="Logo" class="logo">
-                <div class="brand">
-                    <h1>Methi & More</h1>
-                    <p class="subtitle">Authentic Indian Homemade Snacks</p>
-                </div>
-            </div>
-            <nav>
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="profile.jpg" alt="Methi & More Logo" class="logo">
+                <span>Methi & More</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
-        </header>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
 
-        <main>
-            <section class="content-section">
-                <h2>Contact & Enquiries</h2>
-                <div class="contact-details">
-                    <p>
-                        <img src="https://img.icons8.com/material-outlined/24/000000/email.png" alt="Email Icon" class="icon">
-                        <a href="mailto:methiandmore@gmail.com">methiandmore@gmail.com</a>
-                    </p>
-                    <p>
-                        <img src="https://img.icons8.com/material-outlined/24/000000/phone.png" alt="Phone Icon" class="icon">
-                        <a href="tel:+918898573121">+91 (889) 857-3121</a>
-                    </p>
+    <main class="page-main-content">
+        <section id="contact-page" class="content-section">
+            <div class="container">
+                <h2>Contact Information</h2>
+                <div class="vcard-info">
+                    <pre>
+BEGIN:VCARD
+VERSION:3.0
+N:Hate;Gauri;Ashwin;Mrs.
+FN:Mrs. Gauri Ashwin Hate
+ORG:Methi & More
+TEL;TYPE=CELL,VOICE:+918898573121
+EMAIL:methiandmore@gmail.com
+PHOTO;VALUE=URL:https://methiandmore.github.io/Business-Card/profile.jpg
+URL;TYPE=website:https://methiandmore.github.io/Business-Card/
+END:VCARD
+                    </pre>
                 </div>
-                <a href="contact.vcf" class="button">
-                    <img src="https://img.icons8.com/material-outlined/24/ffffff/add-user-male.png" alt="Add Contact Icon" class="icon">
-                    Add to Contacts
-                </a>
-            </section>
-        </main>
-        <footer class="card-footer">
-            <p>© 2025 Methi & More</p>
-        </footer>
-    </div>
+                <a href="contact.vcf" class="cta-button">Add to Contacts</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer-bottom">
+        <p>© 2025 Methi & More. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
