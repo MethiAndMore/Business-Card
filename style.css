@@ -1,12 +1,11 @@
 :root {
-    /* ---- NEW White Theme with Blue/Purple Accents ---- */
-    --primary-color: #4A90E2;      /* Original Blue */
-    --secondary-color: #7B4FE8;    /* Original Purple */
-    --text-primary: #333333;      /* Dark Gray for headings and main text */
-    --text-secondary: #6c757d;    /* Muted Gray for descriptions */
-    --background-color: #FDFCFE;  /* A very light, almost white background */
-    --surface-color: #FFFFFF;     /* Pure white for cards and surfaces */
-    /* --------------------------------------------------- */
+    /* Light Theme with Pink/Lavender Accents */
+    --primary-color: #E0BBE4;      /* Soft Lavender */
+    --secondary-color: #FBC7D4;    /* Soft Pink */
+    --text-primary: #333333;
+    --text-secondary: #6c757d;
+    --background-color: #FDFCFE;
+    --surface-color: #FFFFFF;
 
     --heading-font: 'Poppins', sans-serif;
     --body-font: 'Poppins', sans-serif;
@@ -35,17 +34,18 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* Header -- MODIFIED FOR GLASS EFFECT */
 .main-header {
-    background: rgba(253, 252, 254, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(253, 252, 254, 0.7); /* Reduced opacity for more transparency */
+    backdrop-filter: blur(12px); /* Increased blur for a smoother glass effect */
+    -webkit-backdrop-filter: blur(12px);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Slightly softer border */
+    transition: background 0.3s ease; /* Smooth transition on scroll */
 }
 
 .main-header .container {
@@ -68,8 +68,8 @@ body {
     width: 40px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    margin-right: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .main-nav ul {
@@ -89,12 +89,12 @@ body {
 }
 
 .main-nav a:hover {
-    color: var(--primary-color); /* Hover color is now blue */
+    color: var(--primary-color);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Blue to Purple gradient */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     min-height: 60vh;
     display: flex;
     align-items: center;
@@ -116,7 +116,7 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Buttons */
+/* The rest of the CSS remains the same... */
 .cta-button, .cta-button-secondary {
     display: inline-block;
     padding: 12px 30px;
@@ -129,7 +129,7 @@ body {
 
 .cta-button {
     background-color: var(--surface-color);
-    color: var(--secondary-color); /* Button text is now purple */
+    color: var(--primary-color);
     border: none;
 }
 
@@ -143,14 +143,13 @@ body {
     transform: translateY(-3px);
 }
 
-/* Content Sections */
 .content-section, .content-section-dark {
     padding: 80px 20px;
     text-align: center;
 }
 
 .content-section-dark {
-    background-color: #f8f9fa; /* A slightly off-white for the contact section */
+    background-color: var(--surface-color);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -158,7 +157,6 @@ body {
 h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
 .section-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-/* Flashcards */
 .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .flashcard { background-color: transparent; height: 320px; perspective: 1000px; cursor: pointer; }
 .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.7s; transform-style: preserve-3d; }
@@ -184,37 +182,31 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
 .card-front p { font-size: 1.1rem; color: var(--text-secondary); margin-top: 5px; }
 
 .card-back {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Blue to purple gradient */
-    color: #FFFFFF; /* White text for high contrast */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #333333;
     transform: rotateY(180deg);
 }
-.card-back h4 { font-size: 1.5rem; margin-bottom: 10px; }
-.card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; }
+.card-back h4 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);}
+.card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; color: #fff; }
 .details-button { color: #fff; text-decoration: underline; font-size: 0.9rem; margin-bottom: 20px; }
 
-/* Order Section on Flashcard */
 .order-section { text-align: center; margin-top: auto; }
 .quantity-control { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
-.quantity-control button { background: rgba(255,255,255,0.2); border: 1px solid #fff; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
-.quantity-control .quantity { margin: 0 15px; font-size: 1.2rem; font-weight: bold; }
+.quantity-control button { background: rgba(255,255,255,0.3); border: 1px solid #fff; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
+.quantity-control .quantity { margin: 0 15px; font-size: 1.2rem; font-weight: bold; color: #fff; }
 .whatsapp-order-button { background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
 .whatsapp-order-button:hover { background-color: #1EBE57; }
 
-/* Products Page */
 .product-list { max-width: 800px; margin: 2rem auto; text-align: left; }
 .product-item { background: var(--surface-color); padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary-color); }
 .product-item h3 { color: var(--text-primary); margin-bottom: 10px; }
 
-/* Contact Page */
 .vcard-info { background: var(--surface-color); padding: 20px; border-radius: 8px; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 .vcard-info pre { white-space: pre-wrap; word-wrap: break-word; text-align: left; color: var(--text-primary); }
-#contact-page .cta-button { background: var(--primary-color); color: white; } /* Make contact button stand out */
+#contact-page .cta-button { background: var(--primary-color); color: white; }
 
-
-/* Footer */
 .main-footer-bottom { text-align: center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
-/* Mobile Navigation */
 .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1001; }
 .hamburger { display: block; width: 25px; height: 2px; background: var(--text-primary); position: relative; transition: background 0.3s 0s; }
 .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 2px; background: var(--text-primary); left: 0; transition: transform 0.3s; }
@@ -231,4 +223,6 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
     .mobile-nav-toggle.active .hamburger { background: transparent; }
     .mobile-nav-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); }
     .mobile-nav-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
-}
+}```
+
+Simply update these files, and your website will have the new header text and the beautiful transparent effect you're looking for.
