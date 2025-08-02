@@ -1,46 +1,100 @@
 :root {
-    --primary-color: #4A90E2;
-    --secondary-color: #7B4FE8;
-    --text-primary: #EAEAEA;
-    --text-secondary: #A0A0A0;
-    --background-color: #121212;
-    --surface-color: #1E1E1E;
+    /* ---- NEW Light Theme with Pink/Lavender Accents ---- */
+    --primary-color: #E0BBE4;      /* Soft Lavender */
+    --secondary-color: #FBC7D4;    /* Soft Pink */
+    --text-primary: #333333;      /* Dark Gray for headings and main text */
+    --text-secondary: #6c757d;    /* Muted Gray for descriptions */
+    --background-color: #FDFCFE;  /* A very light, almost white lavender tint */
+    --surface-color: #FFFFFF;     /* Pure white for cards and surfaces */
+    /* --------------------------------------------------- */
+
     --heading-font: 'Poppins', sans-serif;
     --body-font: 'Poppins', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--body-font);
     background-color: var(--background-color);
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Default text color is now a muted gray */
     line-height: 1.6;
 }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 /* Header */
 .main-header {
-    background: rgba(18, 18, 18, 0.8);
+    background: rgba(253, 252, 254, 0.8); /* Light, semi-transparent background */
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light gray border */
 }
-.main-header .container { display: flex; justify-content: space-between; align-items: center; }
-.logo-link { display: flex; align-items: center; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 1.2rem; }
-.logo { height: 40px; width: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px; border: 2px solid rgba(255, 255, 255, 0.5); }
-.main-nav ul { list-style: none; display: flex; }
-.main-nav li { margin-left: 25px; }
-.main-nav a { color: var(--text-primary); text-decoration: none; font-weight: 400; transition: color 0.3s ease; }
-.main-nav a:hover { color: var(--primary-color); }
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-primary); /* Dark text for the logo name */
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Subtle dark border for the logo */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color); /* Hover color is now lavender */
+}
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Lavender to Pink gradient */
     min-height: 60vh;
     display: flex;
     align-items: center;
@@ -48,8 +102,19 @@ body {
     text-align: center;
     padding: 120px 20px 60px;
 }
-.hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #FFFFFF; margin-bottom: 1rem; }
-.hero .subtitle { font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; }
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #FFFFFF; /* White text looks great on the new gradient */
+    margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
 
 /* Buttons */
 .cta-button, .cta-button-secondary {
@@ -61,14 +126,35 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
 }
-.cta-button { background-color: #FFFFFF; color: var(--secondary-color); border: none; }
-.cta-button-secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
-.cta-button:hover, .cta-button-secondary:hover { transform: translateY(-3px); }
+
+.cta-button {
+    background-color: var(--surface-color); /* White button */
+    color: var(--primary-color); /* Lavender text */
+    border: none;
+}
+
+.cta-button-secondary {
+    background-color: transparent;
+    color: #FFFFFF; /* White text for hero section */
+    border: 1px solid #FFFFFF;
+}
+
+.cta-button:hover, .cta-button-secondary:hover {
+    transform: translateY(-3px);
+}
 
 /* Content Sections */
-.content-section, .content-section-dark { padding: 80px 20px; text-align: center; }
-.content-section-dark { background-color: var(--surface-color); }
-.page-main-content { padding-top: 80px; } /* For non-home pages */
+.content-section, .content-section-dark {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.content-section-dark {
+    background-color: var(--surface-color); /* Now a white section to break up the page */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.page-main-content { padding-top: 80px; }
 h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
 .section-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
@@ -77,6 +163,7 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
 .flashcard { background-color: transparent; height: 320px; perspective: 1000px; cursor: pointer; }
 .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.7s; transform-style: preserve-3d; }
 .flashcard.flipped .card-inner { transform: rotateY(180deg); }
+
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -88,21 +175,28 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: var(--surface-color);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--surface-color); /* White cards */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
 }
+
 .card-front h3 { font-size: 1.8rem; color: var(--text-primary); }
 .card-front p { font-size: 1.1rem; color: var(--text-secondary); margin-top: 5px; }
-.card-back { background: linear-gradient(135deg, #5c9ce2, #8c6ee8); color: #FFFFFF; transform: rotateY(180deg); }
-.card-back h4 { font-size: 1.5rem; margin-bottom: 10px; }
-.card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; }
+
+.card-back {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Lavender-pink gradient */
+    color: #333333; /* Dark text for readability on the light gradient */
+    transform: rotateY(180deg);
+}
+.card-back h4 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);}
+.card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; color: #fff; }
 .details-button { color: #fff; text-decoration: underline; font-size: 0.9rem; margin-bottom: 20px; }
 
 /* Order Section on Flashcard */
 .order-section { text-align: center; margin-top: auto; }
 .quantity-control { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
-.quantity-control button { background: rgba(255,255,255,0.2); border: 1px solid #fff; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
-.quantity-control .quantity { margin: 0 15px; font-size: 1.2rem; font-weight: bold; }
+.quantity-control button { background: rgba(255,255,255,0.3); border: 1px solid #fff; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
+.quantity-control .quantity { margin: 0 15px; font-size: 1.2rem; font-weight: bold; color: #fff; }
 .whatsapp-order-button { background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
 .whatsapp-order-button:hover { background-color: #1EBE57; }
 
@@ -112,11 +206,13 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
 .product-item h3 { color: var(--text-primary); margin-bottom: 10px; }
 
 /* Contact Page */
-.vcard-info { background: var(--surface-color); padding: 20px; border-radius: 8px; margin: 2rem 0; }
+.vcard-info { background: var(--surface-color); padding: 20px; border-radius: 8px; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 .vcard-info pre { white-space: pre-wrap; word-wrap: break-word; text-align: left; color: var(--text-primary); }
+#contact-page .cta-button { background: var(--primary-color); color: white; } /* Make contact button stand out */
+
 
 /* Footer */
-.main-footer-bottom { text-align: center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.main-footer-bottom { text-align: center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 /* Mobile Navigation */
 .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1001; }
