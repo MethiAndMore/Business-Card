@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Methi & More | Digital Business Card</title>
-    <link rel="stylesheet" href="style.css?v=1.1">  <!-- CACHE BUSTING FIX APPLIED HERE -->
+    <link rel="stylesheet" href="style.css?v=1.2">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -19,8 +19,9 @@
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
@@ -41,48 +42,75 @@
     <!-- Products Section -->
     <section id="products" class="content-section">
         <div class="container">
-            <h2>Everything You Need for a Tasty Treat</h2>
-            <p class="section-description">Professionally designed recipes for modern taste without the complexity.</p>
-            
+            <h2>Our Products</h2>
+            <p class="section-description">Click on a card to see more details and place an order.</p>
+
             <div class="flashcard-grid">
                 <!-- Methi Ladoo -->
-                <div class="flashcard">
+                <div class="flashcard" data-product-name="Methi Ladoo">
                     <div class="card-inner">
                         <div class="card-front">
                             <h3>Methi Ladoo</h3>
                             <p>Our Flagbearer</p>
                         </div>
                         <div class="card-back">
-                            <h4>Ingredients</h4>
-                            <p>Fenugreek, Almonds, Cashews, Walnuts, Papaya Seeds, Garden Cress Seeds, Organic Jaggery & Ghee.</p>
+                            <h4>Methi Ladoo</h4>
+                            <p class="product-desc">A healthy, natural regulator for your body. Recommended for all, eaten by the brave for its bitterness.</p>
+                            <a href="products.html" class="details-button">View Details</a>
+                            <div class="order-section">
+                                <div class="quantity-control">
+                                    <button class="quantity-minus">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-plus">+</button>
+                                </div>
+                                <button class="whatsapp-order-button">Order on WhatsApp</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Paushtik Ladoo -->
-                <div class="flashcard">
+                <div class="flashcard" data-product-name="Paushtik Ladoo">
                     <div class="card-inner">
                         <div class="card-front">
                             <h3>Paushtik Ladoo</h3>
                             <p>More Proteins, Less Bitterness</p>
                         </div>
                         <div class="card-back">
-                            <h4>Ingredients</h4>
-                            <p>Makhana, Almonds, Cashews, Walnuts, Kharik, Pumpkin Seeds, Khajoor, Organic Jaggery & Ghee.</p>
+                            <h4>Paushtik Ladoo</h4>
+                            <p class="product-desc">Packed with proteins and wholesome goodness, a delicious treat with reduced bitterness.</p>
+                            <a href="products.html" class="details-button">View Details</a>
+                            <div class="order-section">
+                                <div class="quantity-control">
+                                    <button class="quantity-minus">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-plus">+</button>
+                                </div>
+                                <button class="whatsapp-order-button">Order on WhatsApp</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Dry Fruit Ladoo -->
-                <div class="flashcard">
+                <div class="flashcard" data-product-name="Dry Fruit Ladoo">
                     <div class="card-inner">
                         <div class="card-front">
                             <h3>Dry Fruit Ladoo</h3>
                             <p>Our Bestseller</p>
                         </div>
                         <div class="card-back">
-                            <h4>Ingredients</h4>
-                            <p>Khajoor, Almonds, Cashews, Walnuts, Pumpkin & Watermelon Seeds, Sunflower Seeds, Aliv, Kharik & Ghee.</p>
+                            <h4>Dry Fruit Ladoo</h4>
+                            <p class="product-desc">Your healthy alternative for an after-meal sweet or a quick morning bite.</p>
+                            <a href="products.html" class="details-button">View Details</a>
+                            <div class="order-section">
+                                <div class="quantity-control">
+                                    <button class="quantity-minus">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-plus">+</button>
+                                </div>
+                                <button class="whatsapp-order-button">Order on WhatsApp</button>
+                            </div>
                         </div>
                     </div>
                 </div>
