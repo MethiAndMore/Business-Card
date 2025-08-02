@@ -11,15 +11,8 @@
     --body-font: 'Poppins', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--body-font);
@@ -28,140 +21,91 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* Header -- MODIFIED FOR GLASS EFFECT */
+/* Header */
 .main-header {
-    background: rgba(253, 252, 254, 0.7); /* Reduced opacity for more transparency */
-    backdrop-filter: blur(12px); /* Increased blur for a smoother glass effect */
+    background: rgba(253, 252, 254, 0.7);
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Slightly softer border */
-    transition: background 0.3s ease; /* Smooth transition on scroll */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
+.main-header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo-link { display: flex; align-items: center; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 1.2rem; }
+.logo { height: 40px; width: 40px; border-radius: 50%; object-fit: cover; margin-right: 12px; border: 2px solid rgba(0, 0, 0, 0.05); }
+.main-nav ul { list-style: none; display: flex; }
+.main-nav li { margin-left: 25px; }
+.main-nav a { color: var(--text-primary); text-decoration: none; font-weight: 400; transition: color 0.3s ease; }
+.main-nav a:hover { color: var(--primary-color); }
 
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.logo {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 12px;
-    border: 2px solid rgba(0, 0, 0, 0.05);
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.main-nav li {
-    margin-left: 25px;
-}
-
-.main-nav a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: var(--primary-color);
-}
-
-/* Hero Section */
+/* Hero Section -- MODIFIED */
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    min-height: 60vh;
+    min-height: 70vh; /* Made slightly taller for the new layout */
     display: flex;
+    flex-direction: column; /* Center items vertically */
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 120px 20px 60px;
 }
-
-.hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+.hero-logo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    margin-bottom: 1.5rem;
+}
+.hero-brand-name {
+    font-size: clamp(2.8rem, 6vw, 4rem);
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Reduced margin */
 }
-
 .hero .subtitle {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
 }
 
-/* The rest of the CSS remains the same... */
-.cta-button, .cta-button-secondary {
+/* Buttons */
+.cta-button, .cta-button-secondary, .cta-button-gradient {
     display: inline-block;
     padding: 12px 30px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
+.cta-button { background-color: var(--surface-color); color: var(--primary-color); border: none; }
+.cta-button-secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
+.cta-button:hover, .cta-button-secondary:hover, .cta-button-gradient:hover { transform: translateY(-3px); }
 
-.cta-button {
-    background-color: var(--surface-color);
-    color: var(--primary-color);
-    border: none;
-}
-
-.cta-button-secondary {
-    background-color: transparent;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-}
-
-.cta-button:hover, .cta-button-secondary:hover {
-    transform: translateY(-3px);
-}
-
-.content-section, .content-section-dark {
-    padding: 80px 20px;
-    text-align: center;
-}
-
+/* Content Sections */
+.content-section { padding: 80px 20px; text-align: center; }
 .content-section-dark {
     background-color: var(--surface-color);
+    padding: 80px 20px;
+    text-align: center;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.page-main-content { padding-top: 80px; }
 h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
 .section-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
+/* Flashcards */
 .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .flashcard { background-color: transparent; height: 320px; perspective: 1000px; cursor: pointer; }
 .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.7s; transform-style: preserve-3d; }
 .flashcard.flipped .card-inner { transform: rotateY(180deg); }
-
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -177,38 +121,42 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-
 .card-front h3 { font-size: 1.8rem; color: var(--text-primary); }
 .card-front p { font-size: 1.1rem; color: var(--text-secondary); margin-top: 5px; }
-
 .card-back {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: #333333;
+    color: #fff;
     transform: rotateY(180deg);
 }
-.card-back h4 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);}
-.card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; color: #fff; }
+.card-back h4 { font-size: 1.5rem; margin-bottom: 10px; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);}
+.card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; }
 .details-button { color: #fff; text-decoration: underline; font-size: 0.9rem; margin-bottom: 20px; }
-
 .order-section { text-align: center; margin-top: auto; }
 .quantity-control { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
 .quantity-control button { background: rgba(255,255,255,0.3); border: 1px solid #fff; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
-.quantity-control .quantity { margin: 0 15px; font-size: 1.2rem; font-weight: bold; color: #fff; }
-.whatsapp-order-button { background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
-.whatsapp-order-button:hover { background-color: #1EBE57; }
+.quantity-control .quantity { margin: 0 15px; font-size: 1.2rem; font-weight: bold; }
+.whatsapp-order-button { background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: 600; cursor: pointer; }
 
-.product-list { max-width: 800px; margin: 2rem auto; text-align: left; }
-.product-item { background: var(--surface-color); padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary-color); }
-.product-item h3 { color: var(--text-primary); margin-bottom: 10px; }
+/* NEW Contact Card Section */
+.contact-card-container { max-width: 350px; margin: 2rem auto 0; }
+.contact-card-container .flashcard { height: 280px; }
+.card-back .contact-info-back { margin: 1.5rem 0; }
+.card-back .contact-info-back p { margin-bottom: 1rem; }
+.card-back .contact-info-back a { color: #FFFFFF; font-size: 1.1rem; text-decoration: none; font-weight: 300; }
+.card-back .contact-info-back a:hover { text-decoration: underline; }
+.cta-button-gradient {
+    color: #FFFFFF;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
-.vcard-info { background: var(--surface-color); padding: 20px; border-radius: 8px; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-.vcard-info pre { white-space: pre-wrap; word-wrap: break-word; text-align: left; color: var(--text-primary); }
-#contact-page .cta-button { background: var(--primary-color); color: white; }
-
+/* Footer */
 .main-footer-bottom { text-align: center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
+/* Mobile Navigation */
 .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1001; }
-.hamburger { display: block; width: 25px; height: 2px; background: var(--text-primary); position: relative; transition: background 0.3s 0s; }
+.hamburger { display: block; width: 25px; height: 2px; background: var(--text-primary); position: relative; }
 .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 2px; background: var(--text-primary); left: 0; transition: transform 0.3s; }
 .hamburger::before { top: -8px; }
 .hamburger::after { bottom: -8px; }
@@ -223,6 +171,4 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
     .mobile-nav-toggle.active .hamburger { background: transparent; }
     .mobile-nav-toggle.active .hamburger::before { transform: rotate(45deg) translate(5px, 6px); }
     .mobile-nav-toggle.active .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
-}```
-
-Simply update these files, and your website will have the new header text and the beautiful transparent effect you're looking for.
+}
