@@ -1,7 +1,9 @@
 :root {
-    /* NEW Three-Color Light Theme */
+    /* Main Gradient: Blue-Lavender */
     --c-blue: #A7C7E7;         /* Pastel Blue */
     --c-lavender: #E0BBE4;     /* Soft Lavender */
+    
+    /* Button Gradient: Lavender-Pink */
     --c-pink: #FBC7D4;         /* Soft Pink */
     
     --text-primary: #333333;
@@ -39,7 +41,7 @@ body {
 }
 .main-header .container { display: flex; justify-content: space-between; align-items: center; }
 .logo-link { display: flex; align-items: center; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 1.2rem; }
-.logo { height: 40px; width: 40px; border-radius: 50%; object-fit: cover; margin-right: 12px; border: 2px solid rgba(0, 0, 0, 0.05); }
+/* No .logo class needed in header anymore */
 .main-nav ul { list-style: none; display: flex; }
 .main-nav li { margin-left: 25px; }
 .main-nav a { color: var(--text-primary); text-decoration: none; font-weight: 400; transition: color 0.3s ease; }
@@ -47,8 +49,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--c-blue), var(--c-lavender), var(--c-pink));
-    min-height: 60vh;
+    background: linear-gradient(135deg, var(--c-blue), var(--c-lavender)); /* CORRECTED GRADIENT */
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,11 +58,19 @@ body {
     text-align: center;
     padding: 120px 20px 60px;
 }
+.hero-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    margin-bottom: 1.5rem;
+}
 .hero-brand-name {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-size: clamp(2.8rem, 6vw, 4rem);
     font-weight: 700;
     color: #FFFFFF;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
     margin-bottom: 0.5rem;
 }
 .hero .subtitle {
@@ -86,7 +96,7 @@ body {
 .cta-button-secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
 .cta-button-gradient, .details-button {
     color: #FFFFFF;
-    background: linear-gradient(135deg, var(--c-lavender), var(--c-pink));
+    background: linear-gradient(135deg, var(--c-lavender), var(--c-pink)); /* Pink-Lavender button gradient */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 .cta-button:hover, .cta-button-secondary:hover, .cta-button-gradient:hover, .details-button:hover {
@@ -127,13 +137,13 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
 .card-front h3 { font-size: 1.8rem; color: var(--text-primary); }
 .card-front p { font-size: 1.1rem; color: var(--text-secondary); margin-top: 5px; }
 .card-back {
-    background: linear-gradient(135deg, var(--c-blue), var(--c-lavender), var(--c-pink));
+    background: linear-gradient(135deg, var(--c-blue), var(--c-lavender)); /* CORRECTED GRADIENT */
     color: #fff;
     transform: rotateY(180deg);
 }
 .card-back h4 { font-size: 1.5rem; margin-bottom: 10px; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);}
 .card-back .product-desc { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; padding: 0 10px; }
-.details-button { margin-bottom: 20px; } /* Space between details and order section */
+.details-button { margin-bottom: 20px; }
 
 /* Order Section */
 .order-section { text-align: center; margin-top: auto; width: 100%; }
@@ -145,6 +155,7 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
 /* Contact Card Section */
 .contact-card-container { max-width: 350px; margin: 2rem auto 0; }
 .contact-card-container .flashcard { height: 280px; }
+.contact-card-container .card-back { background: linear-gradient(135deg, var(--c-blue), var(--c-lavender)); } /* Corrected Gradient */
 .card-back .contact-info-back { margin: 1.5rem 0; }
 .card-back .contact-info-back p { margin-bottom: 1rem; }
 .card-back .contact-info-back a { color: #FFFFFF; font-size: 1.1rem; text-decoration: none; font-weight: 300; }
@@ -156,12 +167,12 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
     background: var(--surface-color);
     padding: 25px;
     border-radius: 10px;
-    margin-bottom: 25px; /* Added more space */
+    margin-bottom: 25px;
     border-left: 5px solid var(--c-lavender);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 .product-item h3 { color: var(--text-primary); margin-bottom: 10px; }
-.product-item p { margin-bottom: 20px; } /* Space between ingredients and order section */
+.product-item p { margin-bottom: 20px; }
 .product-item .order-section { text-align: left; }
 .product-item .quantity-control button { background: var(--c-lavender); border-color: var(--c-lavender); }
 .product-item .quantity-control .quantity { color: var(--text-primary); }
