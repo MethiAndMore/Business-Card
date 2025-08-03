@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - From Gauri's Kitchen</title>
-    <link rel="stylesheet" href="style.css?v=1.6">
+    <link rel="stylesheet" href="style.css?v=1.7">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header & Navigation (Now consistent across all pages) -->
+    <!-- Header (Consistent) -->
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo-link">
-                <span>From Gauri's Kitchen</span>
-            </a>
+            <a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -22,9 +20,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
-                <span class="hamburger"></span>
-            </button>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button>
         </div>
     </header>
 
@@ -34,7 +30,7 @@
                 <h2>Product Ingredients</h2>
                 <div class="product-list">
                     <!-- Methi Ladoo -->
-                    <div class="product-item" data-product-name="Methi Ladoo">
+                    <div class="product-item" data-product-id="methiLadoo">
                         <h3>Methi Ladoo</h3>
                         <p><strong>Ingredients:</strong> Fenugreek or Methi, Almonds, Cashewnuts, Walnuts, Papaya Seeds, Aliv or Garden Cress Seeds, Organic Jaggery and Ghee.</p>
                         <div class="order-section">
@@ -43,11 +39,11 @@
                                 <span class="quantity">1</span>
                                 <button class="quantity-plus">+</button>
                             </div>
-                            <button class="whatsapp-order-button">Order on WhatsApp</button>
+                            <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
                     <!-- Paushtik Ladoo -->
-                    <div class="product-item" data-product-name="Paushtik Ladoo">
+                    <div class="product-item" data-product-id="paushtikLadoo">
                         <h3>Paushtik Ladoo</h3>
                         <p><strong>Ingredients:</strong> Makhana, Almonds, Cashewnuts, Walnuts, Kharik, Pumpkin Seeds, Khajoor, Organic Jaggery, and Ghee.</p>
                         <div class="order-section">
@@ -56,11 +52,11 @@
                                 <span class="quantity">1</span>
                                 <button class="quantity-plus">+</button>
                             </div>
-                            <button class="whatsapp-order-button">Order on WhatsApp</button>
+                            <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
                     <!-- Dry Fruit Ladoo -->
-                    <div class="product-item" data-product-name="Dry Fruit Ladoo">
+                    <div class="product-item" data-product-id="dryFruitLadoo">
                         <h3>Dry Fruit Ladoo</h3>
                         <p><strong>Ingredients:</strong> Khajoor, Almonds, Cashewnuts, Walnuts, Pumpkin Seeds, Watermelon Seeds, Sunflower Seeds, Aliv or Garden Cress Seeds, Kharik, Makhana, and Ghee.</p>
                         <div class="order-section">
@@ -69,7 +65,7 @@
                                 <span class="quantity">1</span>
                                 <button class="quantity-plus">+</button>
                             </div>
-                            <button class="whatsapp-order-button">Order on WhatsApp</button>
+                            <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -81,6 +77,13 @@
     <footer class="main-footer-bottom">
         <p>© 2025 Methi & More. All Rights Reserved.</p>
     </footer>
+    
+    <!-- Floating Cart Banner -->
+    <div id="floating-cart-banner" class="hidden">
+        <span id="cart-item-count">0 items in cart</span>
+        <a href="checkout.html" class="checkout-button">Checkout</a>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
