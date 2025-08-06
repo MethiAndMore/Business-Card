@@ -9,19 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button>
-        </div>
-    </header>
+    <header class="main-header"><div class="container"><a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a><nav class="main-nav"><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></nav><button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button></div></header>
 
     <main class="page-main-content">
         <section id="checkout-page" class="content-section">
@@ -29,22 +17,11 @@
                 <h2>Your Order Summary</h2>
                 <form id="checkout-form" action="https://formsubmit.co/methiandmore@gmail.com" method="POST">
                     <div id="cart-items-container"></div>
-                    <div id="empty-cart-message" class="hidden">
-                        <p>Your cart is empty.</p>
-                        <a href="index.html#products" class="cta-button">Start Shopping</a>
-                    </div>
+                    <div id="empty-cart-message" class="hidden"><p>Your cart is empty.</p><a href="index.html#products" class="cta-button">Start Shopping</a></div>
                     <div id="checkout-summary" class="hidden">
-                        <div class="customer-details">
-                            <h3>Your Details</h3>
-                            <input type="text" id="customer-name" name="Name" placeholder="Your Full Name" required>
-                            <input type="email" id="customer-email" name="Email" placeholder="Your Email Address" required>
-                        </div>
-                        <div class="total-bill">
-                            <h3>Total Bill: <span id="total-bill-amount">₹0</span></h3>
-                        </div>
-                        <div class="checkout-actions">
-                            <button type="submit" id="place-order-btn" class="cta-button-gradient">Place Order & Get Receipt</button>
-                        </div>
+                        <div class="customer-details"><h3>Your Details</h3><input type="text" id="customer-name" name="Name" placeholder="Your Full Name" required><input type="email" id="customer-email" name="Email" placeholder="Your Email Address" required></div>
+                        <div class="total-bill"><h3>Total Bill: <span id="total-bill-amount">₹0</span></h3></div>
+                        <div class="checkout-actions"><button type="submit" id="place-order-btn" class="cta-button-gradient">Place Order & Get Receipt</button></div>
                     </div>
                     <input type="hidden" name="_next" value="https://methiandmore.github.io/Business-Card/thanks.html">
                     <input type="hidden" name="_captcha" value="false">
