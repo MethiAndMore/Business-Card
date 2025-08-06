@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>From Gauri's Kitchen | Methi & More</title>
-    <link rel="stylesheet" href="style.css?v=1.9">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo-link">
-                <span>From Gauri's Kitchen</span>
-            </a>
+            <a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -23,13 +20,10 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
-                <span class="hamburger"></span>
-            </button>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <img src="profile.jpg" alt="Methi & More Logo" class="hero-logo">
@@ -39,13 +33,11 @@
         </div>
     </section>
 
-    <!-- Products Section -->
     <section id="products" class="content-section">
         <div class="container">
             <h2>Our Products</h2>
             <p class="section-description">Select a quantity and add items to your cart.</p>
             <div class="flashcard-grid">
-                <!-- Methi Ladoo -->
                 <div class="flashcard" data-product-id="methiLadoo">
                     <div class="card-inner">
                         <div class="card-front"><h3>Methi Ladoo</h3><p>Our Flagbearer</p></div>
@@ -60,7 +52,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Paushtik Ladoo -->
                 <div class="flashcard" data-product-id="paushtikLadoo">
                     <div class="card-inner">
                         <div class="card-front"><h3>Paushtik Ladoo</h3><p>More Proteins, Less Bitterness</p></div>
@@ -75,7 +66,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Dry Fruit Ladoo -->
                 <div class="flashcard" data-product-id="dryFruitLadoo">
                     <div class="card-inner">
                         <div class="card-front"><h3>Dry Fruit Ladoo</h3><p>Our Bestseller</p></div>
@@ -94,7 +84,6 @@
         </div>
     </section>
 
-    <!-- Get In Touch Section -->
     <section id="contact" class="content-section-dark">
         <div class="container">
             <h2>Get In Touch</h2>
@@ -116,20 +105,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="main-footer-bottom">
-        <p>© 2025 Methi & More. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Floating Cart Banner -->
-    <div id="floating-cart-banner" class="hidden">
-        <span id="cart-item-count">0 items in cart</span>
-        <a href="checkout.html" class="checkout-button">Checkout</a>
-    </div>
-
-    <!-- Toast Notification -->
+    <footer class="main-footer-bottom"><p>© 2025 Methi & More. All Rights Reserved.</p></footer>
+    <div id="floating-cart-banner" class="hidden"><span id="cart-item-count">0 items in cart</span><a href="checkout.html" class="checkout-button">Checkout</a></div>
     <div id="toast-notification" class="hidden"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
