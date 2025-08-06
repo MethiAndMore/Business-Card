@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         if (checkoutForm) {
-            checkoutForm.addEventListener('submit', (event) => {
+            checkoutForm.addEventListener('submit', () => {
                 const cart = getCart();
                 const totalBill = cart.reduce((sum, item) => sum + (productData[item.id].price * item.quantity), 0);
                 let orderDetailsText = "ORDER SUMMARY:\n";
@@ -178,6 +178,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     updateCartBanner();
-});```
-
-By methodically replacing these files, we can be confident that the broken link to the stylesheet will be fixed, restoring your website's beautiful design and full functionality.
+});
