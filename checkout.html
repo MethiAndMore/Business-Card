@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - From Gauri's Kitchen</title>
-    <link rel="stylesheet" href="style.css?v=1.7">
+    <link rel="stylesheet" href="style.css?v=1.10">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header (Consistent) -->
@@ -28,9 +30,7 @@
         <section id="checkout-page" class="content-section">
             <div class="container">
                 <h2>Your Order Summary</h2>
-                <div id="cart-items-container">
-                    <!-- Cart items will be dynamically inserted here by script.js -->
-                </div>
+                <div id="cart-items-container"></div>
                 
                 <div id="empty-cart-message" class="hidden">
                     <p>Your cart is empty.</p>
@@ -38,14 +38,23 @@
                 </div>
 
                 <div id="checkout-summary" class="hidden">
+                    <div class="customer-details">
+                        <h3>Your Details</h3>
+                        <input type="text" id="customer-name" placeholder="Your Full Name" required>
+                        <input type="email" id="customer-email" placeholder="Your Email Address" required>
+                    </div>
                     <div class="total-bill">
                         <h3>Total Bill: <span id="total-bill-amount">₹0</span></h3>
                     </div>
                     <div class="checkout-actions">
-                        <h3>Send Order Via:</h3>
-                        <button id="send-whatsapp-btn" class="whatsapp-order-button">WhatsApp</button>
-                        <button id="send-email-btn" class="email-order-button">Email</button>
+                        <button id="place-order-btn" class="cta-button-gradient">Place Final Order</button>
                     </div>
+                </div>
+                
+                <div id="order-success-message" class="hidden">
+                    <h3>Thank You!</h3>
+                    <p>Your order has been sent successfully. A confirmation receipt has been sent to your email.</p>
+                    <a href="index.html" class="cta-button">Continue Shopping</a>
                 </div>
             </div>
         </section>
@@ -58,4 +67,72 @@
     
     <script src="script.js"></script>
 </body>
-</html>
+</html>```
+
+---
+
+#### `style.css` (Updated)
+
+New styles for the customer details form and the success message.
+
+```css
+/* ... (all previous CSS styles remain the same) ... */
+
+/* Checkout Page Styles */
+#cart-items-container, #checkout-summary { max-width: 800px; margin: 0 auto; }
+.checkout-item { display: flex; justify-content: space-between; align-items: center; background: var(--surface-color); padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: left; }
+.checkout-item .item-info h4 { color: var(--text-primary); font-size: 1.2rem; }
+.checkout-item .item-info p { color: var(--text-secondary); font-size: 1rem; margin: 0; }
+.checkout-item .item-controls { display: flex; align-items: center; gap: 20px; }
+.checkout-item .quantity-control button { height: 38px; background: var(--c-lavender); border-color: var(--c-lavender); color: #fff; }
+.checkout-item .quantity-control .quantity { color: var(--text-primary); }
+.checkout-item .remove-item-btn { background: #ff4d4d; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+
+#checkout-summary { margin-top: 40px; background: var(--surface-color); padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+/* ---- NEW Customer Details Form Styles ---- */
+.customer-details {
+    text-align: left;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+}
+.customer-details h3 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.customer-details input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    font-family: var(--body-font);
+}
+
+.total-bill { text-align: right; margin-bottom: 30px; }
+.total-bill h3 { color: var(--text-primary); font-size: 1.5rem; }
+
+.checkout-actions { text-align: center; }
+#place-order-btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    width: 100%;
+    background: linear-gradient(135deg, var(--c-lavender), var(--c-pink));
+}
+
+.hidden { display: none; }
+#empty-cart-message { margin-top: 40px; }
+#empty-cart-message p { font-size: 1.2rem; margin-bottom: 20px; }
+
+#order-success-message {
+    margin-top: 40px;
+    background: var(--surface-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+#order-success-message h3 { color: var(--c-blue); font-size: 2rem; }
+#order-success-message p { font-size: 1.1rem; margin: 15px 0 25px; }
