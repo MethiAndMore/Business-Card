@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. EmailJS Configuration ---
     // Make sure your 4 keys from the EmailJS dashboard are pasted here
-    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-    const EMAILJS_TEMPLATE_ID_TO_OWNER = 'YOUR_ORDER_NOTIFICATION_TEMPLATE_ID'; 
-    const EMAILJS_TEMPLATE_ID_TO_CUSTOMER = 'YOUR_CUSTOMER_RECEIPT_TEMPLATE_ID'; 
-    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+    const EMAILJS_SERVICE_ID = 'service_jzf4gf3';
+    const EMAILJS_TEMPLATE_ID_TO_OWNER = 'template_a9whwdd'; 
+    const EMAILJS_TEMPLATE_ID_TO_CUSTOMER = 'template_8ib05js'; 
+    const EMAILJS_PUBLIC_KEY = 'LrS6znZMRfpTTOX2R';
     
     if (typeof emailjs !== 'undefined') {
         emailjs.init(EMAILJS_PUBLIC_KEY);
