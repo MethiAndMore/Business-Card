@@ -1,15 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Product Database ---
-    // A central place for product names and prices.
     const productData = {
         "methiLadoo": { name: "Methi Ladoo", price: 800 },
         "paushtikLadoo": { name: "Paushtik Ladoo", price: 900 },
         "dryFruitLadoo": { name: "Dry Fruit Ladoo", price: 1000 }
     };
 
-    // --- Core UI Functions ---
-    // This part handles the mobile navigation menu (hamburger icon).
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const mainNav = document.querySelector('.main-nav');
     if (mobileNavToggle && mainNav) {
@@ -27,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // This part handles the 3D flip animation for the cards.
     document.querySelectorAll('.flashcard').forEach(card => {
         card.addEventListener('click', (e) => {
             if (e.target.closest('button, a')) return;
@@ -35,24 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Toast Notification Function ---
-    // This shows the little "Item added to cart!" message.
     let toastTimeout;
     const showToastNotification = (message) => {
         const toast = document.getElementById('toast-notification');
         if (!toast) return;
-
         toast.textContent = message;
         toast.classList.remove('hidden');
-
         clearTimeout(toastTimeout);
-
         toastTimeout = setTimeout(() => {
             toast.classList.add('hidden');
         }, 3000);
     };
 
-    // --- Shopping Cart Logic ---
     const getCart = () => JSON.parse(localStorage.getItem('shoppingCart')) || [];
     const saveCart = (cart) => localStorage.setItem('shoppingCart', JSON.stringify(cart));
 
@@ -83,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showToastNotification(`${quantity}kg of ${productData[productId].name} added to cart!`);
     };
 
-    // This attaches the click listeners to all the +/- and "Add to Cart" buttons.
     document.querySelectorAll('[data-product-id]').forEach(productElement => {
         const productId = productElement.getAttribute('data-product-id');
         const quantitySpan = productElement.querySelector('.quantity');
@@ -98,9 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Page Specific Logic ---
-
-    // This handles the smart scrolling on the Products page.
     if (document.querySelector('.product-list')) {
         const hash = window.location.hash;
         if (hash) {
@@ -113,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // --- CHECKOUT PAGE LOGIC (REBUILT FOR FORMSUBMIT) ---
     if (document.getElementById('checkout-page')) {
         const checkoutForm = document.getElementById('checkout-form');
         const cartItemsContainer = document.getElementById('cart-items-container');
@@ -168,13 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
         
-        // New handler for the form submission
         if (checkoutForm) {
             checkoutForm.addEventListener('submit', (event) => {
-                // Generate the order details just before submitting
                 const cart = getCart();
                 const totalBill = cart.reduce((sum, item) => sum + (productData[item.id].price * item.quantity), 0);
-                
                 let orderDetailsText = "ORDER SUMMARY:\n";
                 orderDetailsText += "--------------------------------\n";
                 cart.forEach(item => {
@@ -184,23 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 orderDetailsText += "--------------------------------\n";
                 orderDetailsText += `TOTAL BILL: ₹${totalBill}`;
-
-                // Create a hidden textarea to hold the order details for the email
                 const hiddenOrderDetails = document.createElement('textarea');
                 hiddenOrderDetails.name = "Order Details";
                 hiddenOrderDetails.value = orderDetailsText;
                 hiddenOrderDetails.style.display = "none";
                 checkoutForm.appendChild(hiddenOrderDetails);
-                
-                // Clear the cart from local storage after submission
                 saveCart([]);
             });
         }
         
-        // Initial render on page load
         renderCartItems();
     }
     
-    // --- Run on every page load ---
     updateCartBanner();
-});
+});```
+
+By methodically replacing these files, we can be confident that the broken link to the stylesheet will be fixed, restoring your website's beautiful design and full functionality.
