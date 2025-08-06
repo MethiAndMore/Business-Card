@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>From Gauri's Kitchen | Methi & More</title>
-    <link rel="stylesheet" href="style.css?v=1.8">
+    <link rel="stylesheet" href="style.css?v=1.9">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -48,21 +48,13 @@
                 <!-- Methi Ladoo -->
                 <div class="flashcard" data-product-id="methiLadoo">
                     <div class="card-inner">
-                        <div class="card-front">
-                            <h3>Methi Ladoo</h3>
-                            <p>Our Flagbearer</p>
-                        </div>
+                        <div class="card-front"><h3>Methi Ladoo</h3><p>Our Flagbearer</p></div>
                         <div class="card-back">
                             <h4>Methi Ladoo</h4>
                             <p class="product-desc">A healthy, natural regulator for your body.</p>
-                            <!-- View Details Button RESTORED -->
-                            <a href="products.html" class="details-button">View Details</a>
+                            <a href="products.html#methiLadoo" class="details-button">View Details</a>
                             <div class="order-section">
-                                <div class="quantity-control">
-                                    <button class="quantity-minus">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="quantity-plus">+</button>
-                                </div>
+                                <div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div>
                                 <button class="add-to-cart-btn">Add to Cart</button>
                             </div>
                         </div>
@@ -71,21 +63,13 @@
                 <!-- Paushtik Ladoo -->
                 <div class="flashcard" data-product-id="paushtikLadoo">
                     <div class="card-inner">
-                        <div class="card-front">
-                            <h3>Paushtik Ladoo</h3>
-                            <p>More Proteins, Less Bitterness</p>
-                        </div>
+                        <div class="card-front"><h3>Paushtik Ladoo</h3><p>More Proteins, Less Bitterness</p></div>
                         <div class="card-back">
                             <h4>Paushtik Ladoo</h4>
                             <p class="product-desc">Packed with proteins and wholesome goodness.</p>
-                            <!-- View Details Button RESTORED -->
-                            <a href="products.html" class="details-button">View Details</a>
+                            <a href="products.html#paushtikLadoo" class="details-button">View Details</a>
                             <div class="order-section">
-                                <div class="quantity-control">
-                                    <button class="quantity-minus">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="quantity-plus">+</button>
-                                </div>
+                                <div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div>
                                 <button class="add-to-cart-btn">Add to Cart</button>
                             </div>
                         </div>
@@ -94,21 +78,13 @@
                 <!-- Dry Fruit Ladoo -->
                 <div class="flashcard" data-product-id="dryFruitLadoo">
                     <div class="card-inner">
-                        <div class="card-front">
-                            <h3>Dry Fruit Ladoo</h3>
-                            <p>Our Bestseller</p>
-                        </div>
+                        <div class="card-front"><h3>Dry Fruit Ladoo</h3><p>Our Bestseller</p></div>
                         <div class="card-back">
                             <h4>Dry Fruit Ladoo</h4>
                             <p class="product-desc">Your healthy alternative for a sweet-craving.</p>
-                             <!-- View Details Button RESTORED -->
-                            <a href="products.html" class="details-button">View Details</a>
+                            <a href="products.html#dryFruitLadoo" class="details-button">View Details</a>
                             <div class="order-section">
-                                <div class="quantity-control">
-                                    <button class="quantity-minus">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="quantity-plus">+</button>
-                                </div>
+                                <div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div>
                                 <button class="add-to-cart-btn">Add to Cart</button>
                             </div>
                         </div>
@@ -118,17 +94,14 @@
         </div>
     </section>
 
-    <!-- Get In Touch Section RESTORED -->
+    <!-- Get In Touch Section -->
     <section id="contact" class="content-section-dark">
         <div class="container">
             <h2>Get In Touch</h2>
             <div class="contact-card-container">
                 <div class="flashcard">
                     <div class="card-inner">
-                        <div class="card-front">
-                            <h3>Gauri Ashwin Hate</h3>
-                            <p>Co-Founder & CEO</p>
-                        </div>
+                        <div class="card-front"><h3>Gauri Ashwin Hate</h3><p>Co-Founder & CEO</p></div>
                         <div class="card-back">
                             <h4>Contact Details</h4>
                             <div class="contact-info-back">
@@ -153,6 +126,9 @@
         <span id="cart-item-count">0 items in cart</span>
         <a href="checkout.html" class="checkout-button">Checkout</a>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="hidden"></div>
 
     <script src="script.js"></script>
 </body>
