@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - From Gauri's Kitchen</title>
-    <link rel="stylesheet" href="style.css?v=1.9"> <!-- Using the latest stylesheet -->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header (Consistent) -->
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a>
@@ -29,44 +28,27 @@
             <div class="container">
                 <h2>Product Ingredients</h2>
                 <div class="product-list">
-                    <!-- Methi Ladoo -->
                     <div class="product-item" id="methiLadoo" data-product-id="methiLadoo">
                         <h3>Methi Ladoo</h3>
-                        <!-- UPDATED INGREDIENTS FOR METHI LADOO -->
                         <p><strong>Ingredients:</strong> Methi (Fenugreek), Almonds, Cashewnuts, Walnuts, Papaya Seeds, Aliv/Halim (Garden Cress Seeds), Organic Jaggery and Ghee.</p>
                         <div class="order-section">
-                            <div class="quantity-control">
-                                <button class="quantity-minus">-</button>
-                                <span class="quantity">1</span>
-                                <button class="quantity-plus">+</button>
-                            </div>
+                            <div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div>
                             <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
-                    <!-- Paushtik Ladoo (Unchanged) -->
                     <div class="product-item" id="paushtikLadoo" data-product-id="paushtikLadoo">
                         <h3>Paushtik Ladoo</h3>
                         <p><strong>Ingredients:</strong> Makhana, Almonds, Cashewnuts, Walnuts, Kharik, Pumpkin Seeds, Khajoor, Organic Jaggery, and Ghee.</p>
                         <div class="order-section">
-                            <div class="quantity-control">
-                                <button class="quantity-minus">-</button>
-                                <span class="quantity">1</span>
-                                <button class="quantity-plus">+</button>
-                            </div>
+                            <div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div>
                             <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
-                    <!-- Dry Fruit Ladoo -->
                     <div class="product-item" id="dryFruitLadoo" data-product-id="dryFruitLadoo">
                         <h3>Dry Fruit Ladoo</h3>
-                        <!-- UPDATED INGREDIENTS FOR DRY FRUIT LADOO -->
                         <p><strong>Ingredients:</strong> Khajoor, Almonds, Cashewnuts, Walnuts, Pumpkin Seeds, Watermelon Seeds, Sunflower Seeds, Aliv/Halim (Garden Cress Seeds), Kharik, Makhana, and Ghee.</p>
                         <div class="order-section">
-                            <div class="quantity-control">
-                                <button class="quantity-minus">-</button>
-                                <span class="quantity">1</span>
-                                <button class="quantity-plus">+</button>
-                            </div>
+                            <div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div>
                             <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
@@ -74,19 +56,10 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="main-footer-bottom">
-        <p>© 2025 Methi & More. All Rights Reserved.</p>
-    </footer>
     
-    <!-- Floating Cart Banner & Toast -->
-    <div id="floating-cart-banner" class="hidden">
-        <span id="cart-item-count">0 items in cart</span>
-        <a href="checkout.html" class="checkout-button">Checkout</a>
-    </div>
+    <footer class="main-footer-bottom"><p>© 2025 Methi & More. All Rights Reserved.</p></footer>
+    <div id="floating-cart-banner" class="hidden"><span id="cart-item-count">0 items in cart</span><a href="checkout.html" class="checkout-button">Checkout</a></div>
     <div id="toast-notification" class="hidden"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
