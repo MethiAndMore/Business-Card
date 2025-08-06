@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - From Gauri's Kitchen</title>
-    <link rel="stylesheet" href="style.css?v=1.11">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="profile.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header (Consistent) -->
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a>
@@ -28,19 +27,12 @@
         <section id="checkout-page" class="content-section">
             <div class="container">
                 <h2>Your Order Summary</h2>
-                
-                <!-- This is now a FORM element -->
                 <form id="checkout-form" action="https://formsubmit.co/methiandmore@gmail.com" method="POST">
-                    
-                    <div id="cart-items-container">
-                        <!-- Cart items are loaded here by JS -->
-                    </div>
-                    
+                    <div id="cart-items-container"></div>
                     <div id="empty-cart-message" class="hidden">
                         <p>Your cart is empty.</p>
                         <a href="index.html#products" class="cta-button">Start Shopping</a>
                     </div>
-
                     <div id="checkout-summary" class="hidden">
                         <div class="customer-details">
                             <h3>Your Details</h3>
@@ -54,22 +46,14 @@
                             <button type="submit" id="place-order-btn" class="cta-button-gradient">Place Order & Get Receipt</button>
                         </div>
                     </div>
-
-                    <!-- FormSubmit Configuration -->
-                    <!-- IMPORTANT: Update this URL to your live thanks.html page URL -->
                     <input type="hidden" name="_next" value="https://methiandmore.github.io/Business-Card/thanks.html">
-                    <input type="hidden" name="_captcha" value="false"> <!-- Optional: disables the CAPTCHA page -->
-
+                    <input type="hidden" name="_captcha" value="false">
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer-bottom">
-        <p>© 2025 Methi & More. All Rights Reserved.</p>
-    </footer>
-    
+    <footer class="main-footer-bottom"><p>© 2025 Methi & More. All Rights Reserved.</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
