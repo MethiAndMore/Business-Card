@@ -1,23 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- 1. Product Database ---
     const productData = { "methiLadoo": { name: "Methi Ladoo", price: 800 }, "paushtikLadoo": { name: "Paushtik Ladoo", price: 900 }, "dryFruitLadoo": { name: "Dry Fruit Ladoo", price: 1000 } };
 
+    // --- 2. Core UI Functions ---
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const mainNav = document.querySelector('.main-nav');
     if (mobileNavToggle && mainNav) { mobileNavToggle.addEventListener('click', () => { mobileNavToggle.classList.toggle('active'); mainNav.classList.toggle('active'); }); }
     document.querySelectorAll('.main-nav a').forEach(link => { link.addEventListener('click', () => { if (mainNav && mainNav.classList.contains('active')) { mobileNavToggle.classList.remove('active'); mainNav.classList.remove('active'); } }); });
-    document.querySelectorAll('.flashcard').forEach(card => { card.addEventListener('click', (e) => { if (e.target.closest('button, a')) return; card.classList.toggle('flipped'); }); });
+    // This now correctly applies flip logic to ALL flashcards, including the new one
+    document.querySelectorAll('.flashcard').forEach(card => { card.addEventListener('click', (e) => { if (e.target.closest('button, a, input, label')) return; card.classList.toggle('flipped'); }); });
     let toastTimeout;
     const showToastNotification = (message) => { const toast = document.getElementById('toast-notification'); if (!toast) return; toast.textContent = message; toast.classList.remove('hidden'); clearTimeout(toastTimeout); toastTimeout = setTimeout(() => { toast.classList.add('hidden'); }, 3000); };
 
+    // --- 3. Shopping Cart Logic ---
     const getCart = () => JSON.parse(localStorage.getItem('shoppingCart')) || [];
     const saveCart = (cart) => localStorage.setItem('shoppingCart', JSON.stringify(cart));
     const updateCartBanner = () => { const cart = getCart(); const banner = document.getElementById('floating-cart-banner'); const itemCountSpan = document.getElementById('cart-item-count'); if (!banner || !itemCountSpan) return; const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0); if (totalItems > 0) { itemCountSpan.textContent = `${totalItems} item${totalItems > 1 ? 's' : ''} in cart`; banner.classList.remove('hidden'); } else { banner.classList.add('hidden'); } };
     const addToCart = (productId, quantity) => { const cart = getCart(); const existingItem = cart.find(item => item.id === productId); if (existingItem) { existingItem.quantity += quantity; } else { cart.push({ id: productId, quantity: quantity }); } saveCart(cart); updateCartBanner(); showToastNotification(`${quantity}kg of ${productData[productId].name} added to cart!`); };
     document.querySelectorAll('[data-product-id]').forEach(productElement => { const productId = productElement.getAttribute('data-product-id'); const quantitySpan = productElement.querySelector('.quantity'); const minusBtn = productElement.querySelector('.quantity-minus'); const plusBtn = productElement.querySelector('.quantity-plus'); const addBtn = productElement.querySelector('.add-to-cart-btn'); if (quantitySpan) { if (minusBtn) { minusBtn.addEventListener('click', () => { let q = parseInt(quantitySpan.textContent); if (q > 1) quantitySpan.textContent = q - 1; }); } if (plusBtn) { plusBtn.addEventListener('click', () => { let q = parseInt(quantitySpan.textContent); quantitySpan.textContent = q + 1; }); } if (addBtn) { addBtn.addEventListener('click', () => { const q = parseInt(quantitySpan.textContent); addToCart(productId, q); }); } } });
 
+    // --- 4. Page Specific Logic ---
     if (document.querySelector('.product-list')) { const hash = window.location.hash; if (hash) { const targetElement = document.querySelector(hash); if (targetElement) { setTimeout(() => { targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); } } }
     
+    // --- 5. CHECKOUT PAGE LOGIC (with Premium Features) ---
     if (document.getElementById('checkout-page')) {
         const cartItemsContainer = document.getElementById('cart-items-container');
         const emptyCartMessage = document.getElementById('empty-cart-message');
@@ -31,9 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const updateTotalBill = () => {
             const cart = getCart();
             let total = cart.reduce((sum, item) => sum + (productData[item.id].price * item.quantity), 0);
+            
+            // PRICE CORRECTED TO 300
             if (premiumToggle && premiumToggle.checked) {
-                total += 100;
+                total += 300;
             }
+
             if(totalBillSpan) totalBillSpan.textContent = `₹${total}`;
         };
 
@@ -63,9 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 message += `- ${product.name}: ${item.quantity}kg (₹${itemTotal})\n`;
             });
             let finalTotal = subtotal;
+            // PRICE CORRECTED TO 300
             if (premiumToggle && premiumToggle.checked) {
-                finalTotal += 100;
-                message += `- Premium Gift Wrapping: (+₹100)\n`;
+                finalTotal += 300;
+                message += `- Premium Gift Wrapping: (+₹300)\n`;
             }
             message += "--------------------------------\n";
             message += `TOTAL BILL: ₹${finalTotal}\n\n`;
@@ -97,5 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCartItems();
     }
     
+    // --- 6. Run on every page load ---
     updateCartBanner();
 });
