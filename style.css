@@ -107,8 +107,10 @@ h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; color: var(--text-pr
     margin: 30px auto 0;
 }
 .checkout-addon-card {
-    height: 160px; /* A custom height for this specific card */
+    height: auto; /* CHANGED: Card now auto-sizes to its content */
     margin: 0 auto;
+    padding-top: 25px; /* Added padding for better spacing */
+    padding-bottom: 25px; /* Added padding for better spacing */
 }
 .checkout-addon-card .card-front h3 {
     margin-bottom: 15px;
