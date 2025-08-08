@@ -10,27 +10,52 @@
 </head>
 <body>
     <header class="main-header"><div class="container"><a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a><nav class="main-nav"><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></nav><button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button></div></header>
+
     <main class="page-main-content">
         <section id="checkout-page" class="content-section">
             <div class="container">
                 <h2>Your Order Summary</h2>
+                
                 <div id="cart-items-container"></div>
                 <div id="empty-cart-message" class="hidden"><p>Your cart is empty.</p><a href="index.html#products" class="cta-button">Start Shopping</a></div>
+
                 <div id="checkout-summary" class="hidden">
-                    <div class="order-addons">
-                        <h3>Add-ons</h3>
-                        <div class="premium-toggle-container">
-                            <label for="premium-toggle" class="toggle-label"><input type="checkbox" id="premium-toggle"><span class="toggle-switch"></span>Premium Gift Wrapping (+₹300)</label>
+                    <!-- NEW: Premiumize section is now a flip card -->
+                    <div class="checkout-addon-container">
+                        <div class="flashcard checkout-addon-card">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <h3>Premiumize your product</h3>
+                                    <div class="premium-toggle-container">
+                                        <label for="premium-toggle" class="toggle-label">
+                                            <input type="checkbox" id="premium-toggle">
+                                            <span class="toggle-switch"></span>
+                                            Add Premium Gift Wrapping (+₹300)
+                                        </label>
+                                    </div>
+                                    <small class="card-hint">Click to see why</small>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Why go Premium?</h4>
+                                    <p class="product-desc">
+                                        We upgrade your product enough for you to gift your loved ones, 
+                                        since we believe nothing is better than caring for their health and well-being.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <div id="gift-message-wrapper" class="hidden">
                         <h3>Add a Gift Message</h3>
                         <textarea id="gift-message-text" placeholder="Enter your personal message here..."></textarea>
                     </div>
+
                     <div class="feedback-section">
                         <h3>Feedback or Special Instructions (Optional)</h3>
                         <textarea id="feedback-text" placeholder="We'd love to hear your thoughts or any special requests!"></textarea>
                     </div>
+
                     <div class="total-bill">
                         <h3>Total Bill: <span id="total-bill-amount">₹0</span></h3>
                     </div>
@@ -41,6 +66,7 @@
             </div>
         </section>
     </main>
+
     <footer class="main-footer-bottom"><p>© 2025 Methi & More. All Rights Reserved.</p></footer>
     <script src="script.js"></script>
 </body>
