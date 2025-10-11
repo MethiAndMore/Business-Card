@@ -3,60 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From Gauri's Kitchen | Methi & More</title>
+    <title>From Gauri's Kitchen</title>
+    
+    <!-- Link to your custom stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="profile.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts for "Methi & More" (Great Vibes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts for "Shuddha Satvik & Paushtik" (Caveat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- IMPORTANT: If 'Great Vibes' and 'Caveat' don't exactly match your original yellow banner image,
+         you might want to try other similar Google Fonts like:
+         - For 'Methi & More': 'Dancing Script', 'Sacramento', 'Parisienne'
+         - For 'Shuddha Satvik & Paushtik': 'Indie Flower', 'Handlee', 'Kalam'
+         You would replace the font family name in the <link href...> and in style.css accordingly. -->
+
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button>
-        </div>
+    <!-- Top navigation/header section -->
+    <header>
+        <h2>From Gauri's Kitchen</h2>
+        <div class="menu-icon">☰</div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <img src="profile.jpg" alt="Methi & More Logo" class="hero-logo">
-            <h1 class="hero-brand-name">Methi & More</h1>
-            <p class="subtitle">Shuddha, Satvik and Paushtik</p>
-            <a href="#products" class="cta-button">Explore Our Products</a>
-        </div>
-    </section>
+    <!-- Hero banner section -->
+    <div class="hero">
+        <!-- Decorative flower images - ensure these are in an 'images' folder in your repository -->
+        <img src="images/flower1.png" alt="Decorative flower" class="flower flower-top-right">
+        <img src="images/flower2.png" alt="Decorative flower" class="flower flower-bottom-left">
 
-    <section id="products" class="content-section">
-        <div class="container">
-            <h2>Our Products</h2>
-            <p class="section-description">Select a quantity and add items to your cart.</p>
-            <div class="flashcard-grid">
-                <div class="flashcard" data-product-id="methiLadoo"><div class="card-inner"><div class="card-front"><h3>Methi Ladoo</h3><p>Our Flagbearer</p></div><div class="card-back"><h4>Methi Ladoo</h4><p class="product-desc">A healthy, natural regulator for your body.</p><a href="products.html#methiLadoo" class="details-button">View Details</a><div class="order-section"><div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div><button class="add-to-cart-btn">Add to Cart</button></div></div></div></div>
-                <div class="flashcard" data-product-id="paushtikLadoo"><div class="card-inner"><div class="card-front"><h3>Paushtik Ladoo</h3><p>More Proteins, Less Bitterness</p></div><div class="card-back"><h4>Paushtik Ladoo</h4><p class="product-desc">Packed with proteins and wholesome goodness.</p><a href="products.html#paushtikLadoo" class="details-button">View Details</a><div class="order-section"><div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div><button class="add-to-cart-btn">Add to Cart</button></div></div></div></div>
-                <div class="flashcard" data-product-id="dryFruitLadoo"><div class="card-inner"><div class="card-front"><h3>Dry Fruit Ladoo</h3><p>Our Bestseller</p></div><div class="card-back"><h4>Dry Fruit Ladoo</h4><p class="product-desc">Your healthy alternative for a sweet-craving.</p><a href="products.html#dryFruitLadoo" class="details-button">View Details</a><div class="order-section"><div class="quantity-control"><button class="quantity-minus">-</button><span class="quantity">1</span><button class="quantity-plus">+</button></div><button class="add-to-cart-btn">Add to Cart</button></div></div></div></div>
+        <!-- Logo -->
+        <img src="logo.png" alt="Gauri's Kitchen Logo" class="logo">
+        
+        <!-- Main title -->
+        <h1 class="main-title">Methi & More</h1>
+        
+        <!-- Tagline -->
+        <p class="tagline">Shuddha Satvik & Paushtik</p>
+        
+        <!-- Call to action button -->
+        <a href="#products" class="button">Explore Our Products</a>
+    </div>
+
+    <!-- Example Products Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+        <p>Select a quantity and add items to your cart.</p>
+        <!-- Your actual product cards/listings would go here -->
+        <div class="product-grid">
+            <!-- Example Product Card (you'll duplicate and fill this in) -->
+            <div class="product-card">
+                <img src="images/product-ladoo-example.png" alt="Product Image" class="product-image">
+                <h3>Product Name</h3>
+                <p class="price">$XX.XX</p>
+                <button class="add-to-cart-button">Add to Cart</button>
             </div>
+            <!-- More product cards -->
         </div>
     </section>
 
-    <section id="contact" class="content-section-dark">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-card-container">
-                <div class="flashcard"><div class="card-inner"><div class="card-front"><h3>Gauri Ashwin Hate</h3><p>Co-Founder & CEO</p></div><div class="card-back"><h4>Contact Details</h4><div class="contact-info-back"><p><a href="mailto:methiandmore@gmail.com">methiandmore@gmail.com</a></p><p><a href="tel:+918898573121">+91 8898 573121</a></p></div><a href="contact.vcf" class="cta-button-gradient">Add to Contacts</a></div></div></div>
-            </div>
-        </div>
-    </section>
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> Gauri's Kitchen. All rights reserved.</p>
+    </footer>
 
-    <footer class="main-footer-bottom"><p>© 2025 Methi & More. All Rights Reserved.</p></footer>
-    <div id="floating-cart-banner" class="hidden"><span id="cart-item-count">0 items in cart</span><a href="checkout.html" class="checkout-button">Checkout</a></div>
-    <div id="toast-notification" class="hidden"></div>
-    <script src="script.js"></script>
+    <!-- JavaScript to automatically update the copyright year -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
