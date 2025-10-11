@@ -56,6 +56,15 @@ header h2 {
     z-index: 1; /* Ensures logo is above background flowers */
 }
 
+/* Fallback/error styling for images if not found */
+.hero .logo[src=""],
+.flower[src=""],
+.product-image[src=""] {
+    display: none; /* Hide the broken image icon */
+    /* You might add a background or text here instead if you want to show a placeholder */
+}
+
+
 .hero .main-title {
     font-family: 'Great Vibes', cursive; /* Applied Google Font for script */
     font-size: 4.8em; /* Large size for prominence */
@@ -96,7 +105,7 @@ header h2 {
 /* --- Decorative Flower Styles --- */
 .flower {
     position: absolute;
-    opacity: 0.25; /* Adjusted opacity for a more subtle background effect */
+    opacity: 0.35; /* Increased opacity for flowers to be more visible */
     z-index: 0; /* Ensures flowers are behind other hero content */
     width: 300px; /* Adjusted size for flowers */
     height: auto;
@@ -232,6 +241,9 @@ footer {
     .flower-bottom-left {
         bottom: -50px;
         left: -80px;
+    }
+    .hero {
+        min-height: 350px;
     }
     #products {
         padding: 40px 15px;
