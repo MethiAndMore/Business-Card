@@ -1,0 +1,82 @@
+.hero {
+    background: #c3b951; /* Your desired yellow background */
+    /* ... other existing hero styles ... */
+    position: relative; /* Important for positioning absolute flowers */
+    overflow: hidden; /* Helps contain elements if flowers extend beyond */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Add some padding */
+    min-height: 400px; /* Adjust height as needed */
+    text-align: center; /* Center the text */
+}
+
+/* Styles for "Methi & More" */
+.main-title {
+    font-family: 'Great Vibes', cursive; /* Use the chosen script font */
+    font-size: 4em; /* Adjust size as needed */
+    color: #000000; /* Black color as in your yellow banner */
+    margin: 0.2em 0; /* Adjust spacing */
+    line-height: 1.2;
+}
+
+/* Styles for "Shuddha Satvik & Paushtik" */
+.tagline {
+    font-family: 'Caveat', cursive; /* Use the chosen script font */
+    font-size: 1.8em; /* Adjust size as needed */
+    color: #000000; /* Black color as in your yellow banner */
+    margin-bottom: 1.5em; /* Adjust spacing below the tagline and above the button */
+}
+
+/* Ensure your logo and button also have their appropriate styles */
+.logo {
+    width: 120px; /* Adjust size */
+    height: auto;
+    margin-bottom: 1em;
+    z-index: 1; /* Keep logo above flowers */
+}
+
+.button {
+    background-color: #f0f0f0; /* Light button color */
+    color: #333; /* Dark text for button */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Keep button above flowers */
+}
+
+.button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Add the flower styles again if you removed them, or ensure they are present */
+.flower {
+    position: absolute;
+    opacity: 0.3; /* Adjusted opacity to make them more subtle, match your image */
+    z-index: 0;
+    width: 250px; /* Adjust size */
+    height: auto;
+}
+
+.flower-top-right {
+    top: 0px; /* Position closer to the edge */
+    right: -50px; /* Extend slightly off-screen for effect */
+    transform: rotate(20deg); /* Rotate for a more natural look */
+}
+
+.flower-bottom-left {
+    bottom: -50px; /* Extend slightly off-screen */
+    left: 0px; /* Position closer to the edge */
+    transform: rotate(-30deg); /* Rotate for a more natural look */
+}
+
+/* Adjust general text color in hero if needed */
+.hero p, .hero h1 {
+    color: #000000; /* Ensures all text in hero is black */
+    z-index: 1;
+}
