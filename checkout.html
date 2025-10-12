@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - From Gauri's Kitchen</title>
+    <title>Checkout - Methi & More</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="profile.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@400;500;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header"><div class="container"><a href="index.html" class="logo-link"><span>From Gauri's Kitchen</span></a><nav class="main-nav"><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></nav><button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button></div></header>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <span>Methi & More</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
 
     <main class="page-main-content">
         <section id="checkout-page" class="content-section">
             <div class="container">
-                <h2>Your Order Summary</h2>
+                <h2 class="section-title">Your Order Summary</h2>
                 
                 <div id="cart-items-container"></div>
-                <div id="empty-cart-message" class="hidden"><p>Your cart is empty.</p><a href="index.html#products" class="cta-button">Start Shopping</a></div>
+                
+                <div id="empty-cart-message" class="hidden">
+                    <p>Your cart is empty.</p>
+                    <a href="index.html#products" class="cta-button">Start Shopping</a>
+                </div>
 
                 <div id="checkout-summary" class="hidden">
-                    <!-- NEW: Premiumize section is now a flip card -->
+                    <!-- Premium Gift Wrapping Flip Card -->
                     <div class="checkout-addon-container">
                         <div class="flashcard checkout-addon-card">
                             <div class="card-inner">
@@ -33,13 +53,16 @@
                                             Add Premium Gift Wrapping (+₹300)
                                         </label>
                                     </div>
-                                    <small class="card-hint">Click to see why</small>
+                                    <small class="card-hint">👆 Hover/Click to see why</small>
                                 </div>
                                 <div class="card-back">
                                     <h4>Why go Premium?</h4>
                                     <p class="product-desc">
                                         We upgrade your product enough for you to gift your loved ones, 
                                         since we believe nothing is better than caring for their health and well-being.
+                                    </p>
+                                    <p class="product-desc" style="margin-top: 15px;">
+                                        <strong>Includes:</strong> Beautiful gift box, decorative ribbon, and personalized message card.
                                     </p>
                                 </div>
                             </div>
@@ -59,15 +82,22 @@
                     <div class="total-bill">
                         <h3>Total Bill: <span id="total-bill-amount">₹0</span></h3>
                     </div>
+                    
                     <div class="checkout-actions">
-                        <button id="send-whatsapp-btn" class="whatsapp-order-button">Send Order on WhatsApp</button>
+                        <button id="send-whatsapp-btn" class="whatsapp-order-button">
+                            📱 Send Order on WhatsApp
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer-bottom"><p>© 2025 Methi & More. All Rights Reserved.</p></footer>
+    <footer class="main-footer-bottom">
+        <p>© 2025 Methi & More by Gauri. All Rights Reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">Shuddha Satvik & Paushtik</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
