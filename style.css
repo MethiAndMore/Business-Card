@@ -817,9 +817,17 @@ input[type="checkbox"]:checked + .toggle-switch::after {
 
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
     .hero {
         min-height: 80vh;
-        padding: 60px 20px;
+        padding: 100px 20px 60px 20px;
     }
 
     .brand-name {
@@ -847,9 +855,29 @@ input[type="checkbox"]:checked + .toggle-switch::after {
     .flashcard {
         height: 400px;
     }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu-overlay {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
+    .header-logo {
+        font-size: 1.1rem;
+    }
+
     .brand-name {
         font-size: 2.5rem;
     }
@@ -864,5 +892,9 @@ input[type="checkbox"]:checked + .toggle-switch::after {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .mobile-nav a {
+        font-size: 1.5rem;
     }
 }
