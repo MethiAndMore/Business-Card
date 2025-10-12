@@ -1,82 +1,687 @@
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== HERO SECTION ========== */
 .hero {
-    background: #c3b951; /* Your desired yellow background */
-    /* ... other existing hero styles ... */
-    position: relative; /* Important for positioning absolute flowers */
-    overflow: hidden; /* Helps contain elements if flowers extend beyond */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #C9B037 0%, #D4C45D 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* Add some padding */
-    min-height: 400px; /* Adjust height as needed */
-    text-align: center; /* Center the text */
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
 }
 
-/* Styles for "Methi & More" */
-.main-title {
-    font-family: 'Great Vibes', cursive; /* Use the chosen script font */
-    font-size: 4em; /* Adjust size as needed */
-    color: #000000; /* Black color as in your yellow banner */
-    margin: 0.2em 0; /* Adjust spacing */
-    line-height: 1.2;
-}
-
-/* Styles for "Shuddha Satvik & Paushtik" */
-.tagline {
-    font-family: 'Caveat', cursive; /* Use the chosen script font */
-    font-size: 1.8em; /* Adjust size as needed */
-    color: #000000; /* Black color as in your yellow banner */
-    margin-bottom: 1.5em; /* Adjust spacing below the tagline and above the button */
-}
-
-/* Ensure your logo and button also have their appropriate styles */
-.logo {
-    width: 120px; /* Adjust size */
-    height: auto;
-    margin-bottom: 1em;
-    z-index: 1; /* Keep logo above flowers */
-}
-
-.button {
-    background-color: #f0f0f0; /* Light button color */
-    color: #333; /* Dark text for button */
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 1; /* Keep button above flowers */
-}
-
-.button:hover {
-    background-color: #e0e0e0;
-}
-
-/* Add the flower styles again if you removed them, or ensure they are present */
-.flower {
+/* Floral Background Decorations */
+.hero::before,
+.hero::after {
+    content: '';
     position: absolute;
-    opacity: 0.3; /* Adjusted opacity to make them more subtle, match your image */
-    z-index: 0;
-    width: 250px; /* Adjust size */
-    height: auto;
-}
-
-.flower-top-right {
-    top: 0px; /* Position closer to the edge */
-    right: -50px; /* Extend slightly off-screen for effect */
-    transform: rotate(20deg); /* Rotate for a more natural look */
-}
-
-.flower-bottom-left {
-    bottom: -50px; /* Extend slightly off-screen */
-    left: 0px; /* Position closer to the edge */
-    transform: rotate(-30deg); /* Rotate for a more natural look */
-}
-
-/* Adjust general text color in hero if needed */
-.hero p, .hero h1 {
-    color: #000000; /* Ensures all text in hero is black */
+    width: 400px;
+    height: 400px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100 20 Q120 40 100 70 Q80 40 100 20 M100 70 Q130 90 100 120 Q70 90 100 70 M100 120 Q120 160 100 180 Q80 160 100 120 M70 70 Q50 80 40 70 Q50 60 70 70 M130 70 Q150 80 160 70 Q150 60 130 70' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='2'/%3E%3Ccircle cx='100' cy='100' r='15' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
     z-index: 1;
 }
+
+.hero::before {
+    top: -100px;
+    right: -100px;
+    transform: rotate(25deg);
+}
+
+.hero::after {
+    bottom: -150px;
+    left: -150px;
+    transform: rotate(-45deg);
+    width: 500px;
+    height: 500px;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.brand-name {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #2c2c2c;
+    line-height: 1.1;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+
+.ampersand {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    display: block;
+    margin: -10px 0;
+}
+
+.by-gauri {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #2c2c2c;
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-style: italic;
+    color: #3c3c3c;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #8B7355;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== PRODUCTS SECTION ========== */
+.products-section {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========== FLIP CARDS ========== */
+.flashcard {
+    perspective: 1000px;
+    height: 450px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.card-front {
+    background: white;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #C9B037 0%, #D4C45D 100%);
+    transform: rotateY(180deg);
+    color: white;
+}
+
+.product-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.product-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+.card-back .product-name {
+    color: white;
+}
+
+.product-desc {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Order Section in Cards */
+.order-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+}
+
+.quantity-minus,
+.quantity-plus {
+    background: #C9B037;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.quantity-minus:hover,
+.quantity-plus:hover {
+    background: #8B7355;
+    transform: scale(1.1);
+}
+
+.quantity {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    min-width: 30px;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    padding: 12px 30px;
+    background: white;
+    color: #8B7355;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact-section {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-item {
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+.contact-item a {
+    color: #8B7355;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #C9B037;
+}
+
+/* ========== FOOTER ========== */
+.main-footer-bottom {
+    background: #2c2c2c;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ========== FLOATING CART BANNER ========== */
+#floating-cart-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #C9B037 0%, #D4C45D 100%);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+#floating-cart-banner.hidden {
+    display: none;
+}
+
+#cart-item-count {
+    color: white;
+    font-weight: 600;
+}
+
+.checkout-button {
+    background: white;
+    color: #8B7355;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.checkout-button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* ========== TOAST NOTIFICATION ========== */
+#toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    transition: all 0.3s;
+}
+
+#toast-notification.hidden {
+    display: none;
+}
+
+/* ========== OTHER PAGES STYLES ========== */
+.main-header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    font-family: 'Cormorant', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-style: italic;
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #C9B037;
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.page-main-content {
+    min-height: 60vh;
+}
+
+.content-section {
+    padding: 80px 20px;
+}
+
+/* Product List Page */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.product-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-item h3 {
+    color: #2c2c2c;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Checkout Page */
+#cart-items-container {
+    margin: 40px 0;
+}
+
+#empty-cart-message {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#empty-cart-message.hidden {
+    display: none;
+}
+
+.checkout-addon-container {
+    margin: 40px 0;
+}
+
+.checkout-addon-card {
+    max-width: 600px;
+    margin: 0 auto;
+    height: 300px;
+}
+
+.card-hint {
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.premium-toggle-container {
+    margin: 20px 0;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+input[type="checkbox"]:checked + .toggle-switch {
+    background: #C9B037;
+}
+
+input[type="checkbox"]:checked + .toggle-switch::after {
+    transform: translateX(25px);
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+#gift-message-wrapper {
+    margin: 30px 0;
+}
+
+#gift-message-wrapper.hidden {
+    display: none;
+}
+
+#gift-message-text,
+#feedback-text {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin-top: 15px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.total-bill {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.5rem;
+    color: #2c2c2c;
+}
+
+.checkout-actions {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.whatsapp-order-button {
+    background: #25D366;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.whatsapp-order-button:hover {
+    background: #1da851;
+    transform: scale(1.05);
+}
+
+/* Contact Page */
+.contact-page-details {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-page-details h3 {
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.contact-page-details p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.cta-button-gradient {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #C9B037 0%, #D4C45D 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s;
+    margin-top: 30px;
+}
+
+.cta-button-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Thank You Page */
+.thank-you-message {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.thank-you-message h3 {
+    color: #C9B037;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* ========== UTILITIES ========== */
+.hidden {
+    display: none !important;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        padding: 60px 20px;
+    }
+
+    .brand-name {
+        font-size: 3.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    #floating-cart-banner {
+        bottom: 10px;
+        right: 10px;
+        padding: 12px 20px;
+    }
+
+    .flashcard {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 2.5rem;
+    }
+
+    .by-gauri {
+        font-size: 1rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    }
