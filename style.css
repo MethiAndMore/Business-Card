@@ -57,11 +57,12 @@ header h2 {
 }
 
 /* Fallback/error styling for images if not found */
-.hero .logo[src=""],
-.flower[src=""],
-.product-image[src=""] {
-    display: none; /* Hide the broken image icon */
-    /* You might add a background or text here instead if you want to show a placeholder */
+/* If an image specified in HTML is not found, its alt text is displayed.
+   This rule attempts to hide the broken image icon, but the alt text might still show.
+   The best fix is to ensure images are in the correct place. */
+img:not([src]):not([alt]), /* Hides images with no src or alt if they are problematic */
+img[src=""] { /* Hides images with empty src */
+    display: none !important;
 }
 
 
@@ -302,4 +303,4 @@ footer {
     .product-grid {
         grid-template-columns: 1fr; /* Stack products on very small screens */
     }
-}
+        }
