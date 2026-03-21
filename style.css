@@ -162,7 +162,7 @@ body {
 /* ========== HERO SECTION ========== */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #C9B037 0%, #D4C45D 100%);
+    background: linear-gradient(135deg, #D4C45D 0%, #C9B037 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,31 +173,59 @@ body {
 }
 
 /* Floral Background Decorations */
-.hero::before,
-.hero::after {
-    content: '';
+.flower-decoration {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100 20 Q120 40 100 70 Q80 40 100 20 M100 70 Q130 90 100 120 Q70 90 100 70 M100 120 Q120 160 100 180 Q80 160 100 120 M70 70 Q50 80 40 70 Q50 60 70 70 M130 70 Q150 80 160 70 Q150 60 130 70' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='2'/%3E%3Ccircle cx='100' cy='100' r='15' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.4;
+    opacity: 0.7;
     z-index: 1;
+    pointer-events: none;
 }
 
-.hero::before {
-    top: -100px;
-    right: -100px;
-    transform: rotate(25deg);
+.flower-top-right {
+    width: 250px;
+    height: 250px;
+    top: 100px;
+    right: 10px;
+    transform: rotate(0deg);
 }
 
-.hero::after {
-    bottom: -150px;
-    left: -150px;
-    transform: rotate(-45deg);
-    width: 500px;
-    height: 500px;
+.flower-bottom-left {
+    width: 300px;
+    height: 300px;
+    bottom: 20px;
+    left: 10px;
+    transform: rotate(0deg);
+}
+
+@media (max-width: 768px) {
+    .flower-top-right {
+        width: 180px;
+        height: 180px;
+        top: 100px;
+        right: 5px;
+    }
+    
+    .flower-bottom-left {
+        width: 220px;
+        height: 220px;
+        bottom: 20px;
+        left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flower-top-right {
+        width: 140px;
+        height: 140px;
+        top: 90px;
+        right: 0;
+    }
+    
+    .flower-bottom-left {
+        width: 180px;
+        height: 180px;
+        bottom: 15px;
+        left: 0;
+    }
 }
 
 .hero-content {
@@ -217,41 +245,47 @@ body {
 }
 
 .brand-name {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(4.5rem, 13vw, 9rem);
     font-weight: 400;
-    font-style: italic;
-    color: #2c2c2c;
-    line-height: 1.1;
+    font-style: normal;
+    color: #1a1a1a;
+    line-height: 1.2;
     margin-bottom: 0;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .ampersand {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-family: 'Cormorant', serif;
-    font-style: italic;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-family: 'Great Vibes', cursive;
+    font-style: normal;
     display: block;
-    margin: -10px 0;
+    margin: -20px 0;
+    color: #1a1a1a;
 }
 
 .by-gauri {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    font-weight: 400;
-    letter-spacing: 4px;
-    color: #2c2c2c;
-    margin: 20px 0 10px 0;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: #1a1a1a;
+    margin: 10px 0 10px 0;
     text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
 }
 
 .tagline {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-style: italic;
-    color: #3c3c3c;
+    font-family: 'Allura', cursive;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-style: normal;
+    color: #2c2c2c;
     margin-bottom: 40px;
-    font-weight: 300;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 1px;
 }
 
 .cta-button {
@@ -587,10 +621,27 @@ body {
     .hero {
         min-height: 80vh;
         padding: 100px 20px 60px 20px;
+        background: #D4C45D;
     }
 
     .brand-name {
         font-size: 3.5rem;
+        color: #000000;
+        font-weight: 500;
+    }
+
+    .ampersand {
+        color: #000000;
+    }
+
+    .by-gauri {
+        color: #000000;
+        font-weight: 600;
+    }
+
+    .tagline {
+        color: #1a1a1a;
+        font-weight: 500;
     }
 
     .flashcard-grid {
@@ -615,20 +666,28 @@ body {
 }
 
 @media (max-width: 480px) {
-    .header-logo {
-        font-size: 1.1rem;
+    .header-logo-text {
+        font-size: 1rem;
+    }
+
+    .header-logo-img {
+        width: 35px;
+        height: 35px;
     }
 
     .brand-name {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        color: #000000;
     }
 
     .by-gauri {
         font-size: 1rem;
+        color: #000000;
     }
 
     .tagline {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        color: #1a1a1a;
     }
 
     .section-title {
@@ -637,5 +696,10 @@ body {
 
     .mobile-nav a {
         font-size: 1.5rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 15px 40px;
     }
 }
