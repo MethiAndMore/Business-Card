@@ -4,448 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Methi & More by Gauri</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-        }
-        
-        .backdrop-blur-md {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-        }
-        
-        .menu-slide {
-            animation: slideIn 0.3s ease-out;
-        }
-
-        .btn-minus, .btn-plus {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 9999px;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.2s;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .btn-minus:hover, .btn-plus:hover {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="profile.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@400;500;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-gradient-to-b from-[#F5F0E8] to-[#E8DCC8]">
-    
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-md shadow-lg border-b border-white/20">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <svg onclick="toggleMenu()" class="w-6 h-6 text-[#8B7355] cursor-pointer hover:text-[#6B5335] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    <h1 class="text-2xl font-bold text-[#8B7355]">Methi & More</h1>
-                </div>
-                <div class="relative">
-                    <svg onclick="toggleCart()" class="w-6 h-6 text-[#8B7355] cursor-pointer hover:text-[#6B5335] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                    <span id="cartBadge" class="hidden absolute -top-2 -right-2 bg-[#8B7355] text-white text-xs w-5 h-5 items-center justify-center rounded-full">0</span>
-                </div>
-            </div>
+<body>
+    <!-- Glass Header -->
+    <header class="glass-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo-link">
+                <img src="profile.jpg" alt="Gauri's Kitchen Logo" class="header-logo-img">
+                <span class="header-logo-text">From Gauri's Kitchen</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <!-- Menu Overlay -->
-    <div id="menuOverlay" class="hidden fixed inset-0 z-40 bg-black/50" onclick="toggleMenu()">
-        <div class="fixed left-0 top-0 bottom-0 w-64 bg-white shadow-xl menu-slide" onclick="event.stopPropagation()">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-8">
-                    <h2 class="text-xl font-bold text-[#8B7355]">Menu</h2>
-                    <svg onclick="toggleMenu()" class="w-6 h-6 text-[#8B7355] cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </div>
-                <nav class="space-y-4">
-                    <a href="#home" class="block py-3 px-4 text-[#8B7355] hover:bg-[#D4C5A0]/20 rounded-lg transition-colors" onclick="toggleMenu()">Home</a>
-                    <a href="#products" class="block py-3 px-4 text-[#8B7355] hover:bg-[#D4C5A0]/20 rounded-lg transition-colors" onclick="toggleMenu()">Products</a>
-                    <a href="#contact" class="block py-3 px-4 text-[#8B7355] hover:bg-[#D4C5A0]/20 rounded-lg transition-colors" onclick="toggleMenu()">Contact</a>
-                </nav>
-            </div>
-        </div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
 
-    <!-- Shopping Cart Floating Bar -->
-    <div id="cartBar" class="hidden fixed bottom-0 left-0 right-0 z-40 bg-white shadow-2xl border-t-2 border-[#8B7355]">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-lg font-bold text-[#8B7355]">Your Cart</h3>
-                <svg onclick="toggleCart()" class="w-5 h-5 text-[#8B7355] cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </div>
-            <div id="cartItems" class="max-h-48 overflow-y-auto mb-4"></div>
-            <div class="flex justify-between items-center mb-4">
-                <span class="text-lg font-bold text-[#8B7355]">Total:</span>
-                <span id="cartTotal" class="text-lg font-bold text-[#8B7355]">₹0</span>
-            </div>
-            <button onclick="showCheckout()" class="w-full bg-[#8B7355] text-white py-3 rounded-lg hover:bg-[#6B5335] transition-colors font-semibold">
-                Proceed to Checkout
-            </button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="profile.jpg" alt="Gauri's Kitchen Logo" class="hero-logo">
+            <h1 class="brand-name">
+                Methi
+                <span class="ampersand">&</span>
+                More
+            </h1>
+            <p class="by-gauri">BY GAURI</p>
+            <p class="tagline">Shuddha Satvik & Paushtik</p>
+            <a href="#products" class="cta-button">Explore Our Products</a>
         </div>
-    </div>
+    </section>
 
-    <!-- Main Content -->
-    <div class="relative min-h-screen overflow-hidden bg-[#D4C5A0]">
-        <!-- Decorative Flowers -->
-        <div class="absolute top-20 left-0 w-64 h-64 opacity-20 pointer-events-none">
-            <svg viewBox="0 0 200 200" class="w-full h-full">
-                <circle cx="100" cy="100" r="30" fill="white" opacity="0.5"/>
-                <ellipse cx="70" cy="70" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(-45 70 70)"/>
-                <ellipse cx="130" cy="70" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(45 130 70)"/>
-                <ellipse cx="70" cy="130" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(45 70 130)"/>
-                <ellipse cx="130" cy="130" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(-45 130 130)"/>
-                <ellipse cx="100" cy="50" rx="25" ry="40" fill="white" opacity="0.6"/>
-                <ellipse cx="150" cy="100" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(90 150 100)"/>
-                <ellipse cx="100" cy="150" rx="25" ry="40" fill="white" opacity="0.6"/>
-                <ellipse cx="50" cy="100" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(90 50 100)"/>
-            </svg>
-        </div>
-        <div class="absolute top-20 right-0 w-64 h-64 opacity-20 pointer-events-none">
-            <svg viewBox="0 0 200 200" class="w-full h-full">
-                <circle cx="100" cy="100" r="30" fill="white" opacity="0.5"/>
-                <ellipse cx="70" cy="70" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(-45 70 70)"/>
-                <ellipse cx="130" cy="70" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(45 130 70)"/>
-                <ellipse cx="70" cy="130" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(45 70 130)"/>
-                <ellipse cx="130" cy="130" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(-45 130 130)"/>
-                <ellipse cx="100" cy="50" rx="25" ry="40" fill="white" opacity="0.6"/>
-                <ellipse cx="150" cy="100" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(90 150 100)"/>
-                <ellipse cx="100" cy="150" rx="25" ry="40" fill="white" opacity="0.6"/>
-                <ellipse cx="50" cy="100" rx="25" ry="40" fill="white" opacity="0.6" transform="rotate(90 50 100)"/>
-            </svg>
-        </div>
-
-        <!-- Hero Section -->
-        <section id="home" class="relative pt-32 pb-20 px-4">
-            <div class="container mx-auto text-center">
-                <div class="inline-block mb-6">
-                    <svg class="w-16 h-16 text-[#6B8E23] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                    </svg>
-                </div>
-                <h2 class="text-5xl md:text-6xl font-bold text-[#8B7355] mb-6">Methi & More</h2>
-                <p class="text-xl text-[#6B5335] mb-4 italic">by Gauri</p>
-                <p class="text-lg text-[#8B7355] max-w-2xl mx-auto mb-8">
-                    Shudhdha Satvik & Paustik - Pure, Wholesome & Nutritious
-                </p>
-                <p class="text-base text-[#6B5335] max-w-3xl mx-auto leading-relaxed">
-                    Experience the goodness of traditional Indian herbs and spices, 
-                    carefully crafted to bring health and flavor to your kitchen.
-                </p>
-            </div>
-        </section>
-
-        <!-- Products Section -->
-        <section id="products" class="py-16 px-4">
-            <div class="container mx-auto">
-                <h3 class="text-4xl font-bold text-center text-[#8B7355] mb-12">Our Premium Products</h3>
-                <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 px-4 bg-white/50">
-            <div class="container mx-auto max-w-2xl text-center">
-                <h3 class="text-4xl font-bold text-[#8B7355] mb-8">Get in Touch</h3>
-                <p class="text-lg text-[#6B5335] mb-8">
-                    Have questions about our products? We'd love to hear from you!
-                </p>
-                <div class="space-y-4">
-                    <p class="text-[#8B7355]"><strong>Email:</strong> info@methiandmore.com</p>
-                    <p class="text-[#8B7355]"><strong>Phone:</strong> +91 98765 43210</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-[#8B7355] text-white py-8 px-4">
-            <div class="container mx-auto text-center">
-                <p class="mb-2">© 2024 Methi & More by Gauri. All rights reserved.</p>
-                <p class="text-sm opacity-80">Shudhdha Satvik & Paustik</p>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Checkout Modal -->
-    <div id="checkoutModal" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" onclick="hideCheckout()">
-        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6" onclick="event.stopPropagation()">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-[#8B7355]">Checkout</h2>
-                <svg onclick="hideCheckout()" class="w-6 h-6 text-[#8B7355] cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </div>
-
-            <div class="mb-6">
-                <h3 class="text-lg font-semibold text-[#8B7355] mb-4">Order Summary</h3>
-                <div id="checkoutItems"></div>
-                <div class="flex justify-between items-center py-4 border-t-2 border-gray-200">
-                    <span class="text-xl font-bold text-[#8B7355]">Total:</span>
-                    <span id="checkoutTotal" class="text-xl font-bold text-[#8B7355]">₹0</span>
-                </div>
-            </div>
-
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-semibold text-[#8B7355] mb-2">Full Name</label>
-                    <input type="text" id="customerName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#8B7355]" placeholder="Enter your name">
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-[#8B7355] mb-2">Phone Number</label>
-                    <input type="tel" id="customerPhone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#8B7355]" placeholder="Enter your phone">
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-[#8B7355] mb-2">Email</label>
-                    <input type="email" id="customerEmail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#8B7355]" placeholder="Enter your email">
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-[#8B7355] mb-2">Delivery Address</label>
-                    <textarea id="customerAddress" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#8B7355]" rows="3" placeholder="Enter your delivery address"></textarea>
-                </div>
-                <button onclick="placeOrder()" class="w-full bg-[#8B7355] text-white py-3 rounded-lg hover:bg-[#6B5335] transition-colors font-semibold">
-                    Place Order
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Products Data
-        const products = [
-            { id: 1, name: 'Premium Methi Powder', price: 120, weight: '100g', image: 'https://images.unsplash.com/photo-1596040033229-a0b4ab4d5af6?w=400&h=300&fit=crop', description: 'Pure, organic fenugreek powder' },
-            { id: 2, name: 'Methi Seeds', price: 80, weight: '250g', image: 'https://images.unsplash.com/photo-1599639957043-f3aa5c986398?w=400&h=300&fit=crop', description: 'Fresh fenugreek seeds' },
-            { id: 3, name: 'Methi Papad', price: 150, weight: '200g', image: 'https://images.unsplash.com/photo-1626776876729-bab4598d37dc?w=400&h=300&fit=crop', description: 'Crispy methi papad' },
-            { id: 4, name: 'Methi Thepla Mix', price: 100, weight: '500g', image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop', description: 'Ready-to-cook thepla mix' },
-            { id: 5, name: 'Methi Pickle', price: 180, weight: '250g', image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&h=300&fit=crop', description: 'Tangy methi pickle' },
-            { id: 6, name: 'Dried Methi Leaves', price: 90, weight: '50g', image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=400&h=300&fit=crop', description: 'Sun-dried kasuri methi' }
-        ];
-
-        let cart = [];
-        let quantities = {};
-
-        // Initialize quantities
-        products.forEach(p => quantities[p.id] = 1);
-
-        // Toggle Menu
-        function toggleMenu() {
-            document.getElementById('menuOverlay').classList.toggle('hidden');
-        }
-
-        // Toggle Cart
-        function toggleCart() {
-            const cartBar = document.getElementById('cartBar');
-            if (cart.length > 0) {
-                cartBar.classList.toggle('hidden');
-                if (!cartBar.classList.contains('hidden')) {
-                    updateCartDisplay();
-                }
-            }
-        }
-
-        // Update Cart Badge
-        function updateCartBadge() {
-            const badge = document.getElementById('cartBadge');
-            const total = cart.reduce((sum, item) => sum + item.quantity, 0);
-            if (total > 0) {
-                badge.textContent = total;
-                badge.classList.remove('hidden');
-                badge.classList.add('flex');
-            } else {
-                badge.classList.add('hidden');
-                badge.classList.remove('flex');
-            }
-        }
-
-        // Update Cart Display
-        function updateCartDisplay() {
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Select a quantity and add items to your cart.</p>
             
-            if (cart.length === 0) {
-                document.getElementById('cartBar').classList.add('hidden');
-                return;
-            }
-
-            cartItems.innerHTML = cart.map(item => `
-                <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                    <div class="flex-1">
-                        <p class="font-semibold text-[#8B7355]">${item.name}</p>
-                        <p class="text-sm text-gray-600">₹${item.price} × ${item.quantity}</p>
-                    </div>
-                    <svg onclick="removeFromCart(${item.id})" class="w-4 h-4 text-red-500 hover:text-red-700 ml-4 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </div>
-            `).join('');
-
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            cartTotal.textContent = `₹${total}`;
-            updateCartBadge();
-        }
-
-        // Add to Cart
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const quantity = quantities[productId];
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity = quantity;
-            } else {
-                cart.push({ ...product, quantity: quantity });
-            }
-            
-            updateCartDisplay();
-            document.getElementById('cartBar').classList.remove('hidden');
-        }
-
-        // Remove from Cart
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCartDisplay();
-            if (cart.length === 0) {
-                document.getElementById('cartBar').classList.add('hidden');
-            }
-        }
-
-        // Update Quantity
-        function updateQuantity(productId, change) {
-            quantities[productId] = Math.max(1, quantities[productId] + change);
-            document.getElementById(`qty-${productId}`).textContent = quantities[productId];
-            
-            // Update cart if item already in cart
-            const cartItem = cart.find(item => item.id === productId);
-            if (cartItem) {
-                cartItem.quantity = quantities[productId];
-                updateCartDisplay();
-            }
-        }
-
-        // Show Checkout
-        function showCheckout() {
-            const checkoutItems = document.getElementById('checkoutItems');
-            const checkoutTotal = document.getElementById('checkoutTotal');
-            
-            checkoutItems.innerHTML = cart.map(item => `
-                <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                    <div>
-                        <p class="font-semibold text-[#8B7355]">${item.name}</p>
-                        <p class="text-sm text-gray-600">₹${item.price} × ${item.quantity}</p>
-                    </div>
-                    <p class="font-semibold text-[#8B7355]">₹${item.price * item.quantity}</p>
-                </div>
-            `).join('');
-            
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            checkoutTotal.textContent = `₹${total}`;
-            
-            document.getElementById('checkoutModal').classList.remove('hidden');
-            document.getElementById('cartBar').classList.add('hidden');
-        }
-
-        // Hide Checkout
-        function hideCheckout() {
-            document.getElementById('checkoutModal').classList.add('hidden');
-        }
-
-        // Place Order
-        function placeOrder() {
-            const name = document.getElementById('customerName').value;
-            const phone = document.getElementById('customerPhone').value;
-            const email = document.getElementById('customerEmail').value;
-            const address = document.getElementById('customerAddress').value;
-
-            if (!name || !phone || !email || !address) {
-                alert('Please fill in all fields');
-                return;
-            }
-
-            alert('Order placed successfully! Thank you for your purchase.');
-            cart = [];
-            quantities = {};
-            products.forEach(p => quantities[p.id] = 1);
-            updateCartDisplay();
-            hideCheckout();
-            
-            // Clear form
-            document.getElementById('customerName').value = '';
-            document.getElementById('customerPhone').value = '';
-            document.getElementById('customerEmail').value = '';
-            document.getElementById('customerAddress').value = '';
-            
-            // Reset all quantity displays
-            products.forEach(p => {
-                document.getElementById(`qty-${p.id}`).textContent = '1';
-            });
-        }
-
-        // Render Products
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = products.map(product => `
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold text-[#8B7355] mb-2">${product.name}</h4>
-                        <p class="text-sm text-[#6B5335] mb-3">${product.description}</p>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-sm text-[#8B7355] font-semibold">${product.weight}</span>
-                            <div class="flex gap-1">
-                                ${[1,2,3,4,5].map(() => `
-                                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                    </svg>
-                                `).join('')}
+            <div class="flashcard-grid">
+                <!-- Methi Ladoo -->
+                <div class="flashcard" data-product-id="methiLadoo">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Methi Ladoo</h3>
+                            <p>Our Flagbearer</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Methi Ladoo</h4>
+                            <p class="product-desc">A healthy, natural regulator for your body.</p>
+                            <a href="products.html#methiLadoo" class="details-button">View Details</a>
+                            <div class="order-section">
+                                <div class="quantity-control">
+                                    <button class="quantity-minus">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn">Add to Cart</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-[#8B7355]">₹${product.price}</span>
-                        </div>
-                        <div class="flex items-center gap-2 mb-4">
-                            <button onclick="updateQuantity(${product.id}, -1)" class="btn-minus">−</button>
-                            <span id="qty-${product.id}" class="w-12 text-center font-semibold text-[#8B7355]">1</span>
-                            <button onclick="updateQuantity(${product.id}, 1)" class="btn-plus">+</button>
-                        </div>
-                        <button onclick="addToCart(${product.id})" class="w-full bg-[#8B7355] text-white py-2 rounded-lg hover:bg-[#6B5335] transition-colors flex items-center justify-center gap-2">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                            Add to Cart
-                        </button>
                     </div>
                 </div>
-            `).join('');
-        }
 
-        // Initialize
-        renderProducts();
-    </script>
+                <!-- Paushtik Ladoo -->
+                <div class="flashcard" data-product-id="paushtikLadoo">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Paushtik Ladoo</h3>
+                            <p>More Proteins, Less Bitterness</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Paushtik Ladoo</h4>
+                            <p class="product-desc">Packed with proteins and wholesome goodness.</p>
+                            <a href="products.html#paushtikLadoo" class="details-button">View Details</a>
+                            <div class="order-section">
+                                <div class="quantity-control">
+                                    <button class="quantity-minus">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dry Fruit Ladoo -->
+                <div class="flashcard" data-product-id="dryFruitLadoo">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Dry Fruit Ladoo</h3>
+                            <p>Our Bestseller</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Dry Fruit Ladoo</h4>
+                            <p class="product-desc">Your healthy alternative for a sweet-craving.</p>
+                            <a href="products.html#dryFruitLadoo" class="details-button">View Details</a>
+                            <div class="order-section">
+                                <div class="quantity-control">
+                                    <button class="quantity-minus">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-card-container">
+                <div class="flashcard">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Gauri Ashwin Hate</h3>
+                            <p>Co-Founder & CEO</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Contact Details</h4>
+                            <div class="contact-info-back">
+                                <p><a href="mailto:methiandmore@gmail.com">methiandmore@gmail.com</a></p>
+                                <p><a href="tel:+918898573121">+91 8898 573121</a></p>
+                            </div>
+                            <a href="contact.vcf" class="cta-button-gradient">Add to Contacts</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer-bottom">
+        <p>© 2025 Methi & More by Gauri. All Rights Reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">Shuddha Satvik & Paushtik</p>
+    </footer>
+
+    <!-- Floating Cart Banner -->
+    <div id="floating-cart-banner" class="hidden">
+        <span id="cart-item-count">0 items in cart</span>
+        <a href="checkout.html" class="checkout-button">Checkout</a>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="hidden"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
